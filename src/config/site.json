@@ -1,0 +1,9 @@
+{
+  "owner": { "github": "davidhurtadop" },
+  "defaultLang": "en",
+  "languages": ["en", "es"],
+  "layout": "horizon",
+  "defaultTheme": "auto",
+  "accent": "#2563eb",
+  "baseUrl": "https://davidhurtadop.github.io/cv-template/"
+}

@@ -1,0 +1,72 @@
+/* Ledger layout: a profile column beside a résumé-style main column. Colours come from css/tokens.css. */
+.ld-skip { position: fixed; top: .5rem; left: .5rem; z-index: 3000; padding: .5rem 1rem; background: var(--surface); }
+
+.ld-page { display: block; min-height: 100vh; }
+.ld-side { position: relative; padding: 2rem 1.5rem; background: var(--surface-alt); border-bottom: 1px solid var(--border); }
+.ld-main { padding: 2.5rem 1.5rem 3rem; max-width: 60rem; }
+
+@media (min-width: 992px) {
+  .ld-page { display: grid; grid-template-columns: 22rem minmax(0, 1fr); }
+  .ld-side { position: sticky; top: 0; height: 100vh; overflow-y: auto; border-bottom: 0; border-right: 1px solid var(--border); padding: 2.5rem 2rem; }
+  .ld-main { padding: 3.5rem 3.5rem 4rem; }
+}
+
+/* Profile column */
+.ld-controls { position: absolute; top: 1rem; right: 1rem; display: flex; gap: .5rem; }
+.ld-icon-btn { color: inherit; border: 1px solid var(--border); border-radius: 50%; width: 2.25rem; height: 2.25rem; padding: 0; display: inline-grid; place-items: center; background: var(--surface); }
+.ld-icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+:root[data-bs-theme="dark"] .ld-icon-sun,
+:root[data-bs-theme="light"] .ld-icon-moon { display: none; }
+.ld-photo { width: 8rem; height: 8rem; object-fit: cover; border-radius: 50%; border: 3px solid var(--accent); margin-bottom: 1.25rem; }
+.ld-name { font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: clamp(1.6rem, 4vw, 2rem); line-height: 1.15; margin: 1.5rem 0 .5rem; padding-right: 5rem; }
+.ld-photo + .ld-name { margin-top: 0; }
+.ld-headline { color: var(--accent); font-weight: 600; min-height: 1.5em; margin-bottom: 1rem; }
+.ld-headline .is-typing::after { content: "|"; margin-left: 2px; animation: ld-blink 1s steps(1) infinite; }
+@keyframes ld-blink { 50% { opacity: 0; } }
+.ld-social-link { font-size: 1.35rem; color: inherit; }
+.ld-social-link:hover { color: var(--accent); }
+
+.ld-nav { margin: 1.25rem 0; }
+.ld-nav .nav { flex-wrap: wrap; gap: .25rem; }
+.ld-nav .nav-link { padding: .25rem .75rem; border-radius: 999px; font-size: .9rem; color: var(--bs-body-color); }
+.ld-nav .nav-link:hover { color: var(--accent); }
+.ld-nav .nav-link.active { background: var(--accent); color: #fff; }
+@media (min-width: 992px) { .ld-nav .nav { flex-direction: column; gap: 0; } .ld-nav .nav-link { border-radius: .5rem; } }
+
+.ld-contact { margin: 1.25rem 0; padding-top: 1.25rem; border-top: 1px solid var(--border); font-size: .92rem; }
+.ld-contact li { display: flex; gap: .6rem; align-items: baseline; margin-bottom: .5rem; overflow-wrap: anywhere; }
+.ld-contact .icon { color: var(--accent); flex: none; }
+.ld-pdf { margin-top: .5rem; }
+
+/* Main column */
+html { scroll-behavior: smooth; }
+.ld-section { padding: 0 0 2.75rem; scroll-margin-top: 1.5rem; }
+.ld-title { font-family: Georgia, "Times New Roman", serif; font-size: 1.6rem; font-weight: 700; margin-bottom: 1.25rem; padding-bottom: .5rem; border-bottom: 2px solid var(--accent); }
+.ld-prose { font-size: 1.05rem; line-height: 1.75; }
+.ld-label { font-size: .85rem; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin: 1.5rem 0 .5rem; }
+
+/* Label/value rows (skills, languages) */
+.ld-rows { margin: 0; }
+.ld-row { display: grid; gap: .15rem 1.5rem; padding: .65rem 0; border-bottom: 1px solid var(--border); }
+.ld-row dt { font-weight: 600; }
+.ld-row dd { margin: 0; color: var(--bs-body-color); }
+@media (min-width: 768px) { .ld-row { grid-template-columns: 13rem 1fr; } }
+
+/* Technology chips */
+.ld-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0; padding: 0; }
+.ld-chip { display: inline-flex; align-items: center; gap: .45rem; padding: .3rem .8rem; border-radius: 999px; background: #fff; color: #1f2937; border: 1px solid var(--border); font-size: .85rem; font-weight: 600; }
+.ld-chip-icon { width: 1.2rem; height: 1.2rem; flex: none; }
+
+/* Experience: dates in the margin, details beside them */
+.ld-job { display: grid; gap: .25rem 1.5rem; padding: 1rem 0 1.25rem; border-bottom: 1px solid var(--border); }
+.ld-job:last-of-type { border-bottom: 0; }
+@media (min-width: 768px) { .ld-job { grid-template-columns: 10.5rem 1fr; } }
+.ld-period { font-size: .9rem; font-weight: 600; color: var(--accent); margin: .2rem 0 0; }
+.ld-role { font-size: 1.15rem; font-weight: 700; margin: 0; }
+.ld-company { color: var(--text-muted); margin: 0 0 .6rem; }
+.ld-bullets { padding-left: 1.1rem; margin: 0; }
+.ld-bullets li + li { margin-top: .35rem; }
+
+.ld-list li { padding: .6rem 0; border-bottom: 1px solid var(--border); }
+.ld-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: .9rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .ld-headline .is-typing::after { animation: none; } }

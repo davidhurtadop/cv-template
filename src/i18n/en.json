@@ -1,0 +1,18 @@
+{
+  "downloadPdf": "Download PDF",
+  "toggleTheme": "Switch between light and dark theme",
+  "skipToContent": "Skip to content",
+  "language": "Language",
+  "contactMe": "Get in touch",
+  "techTitle": "Technologies I work with:",
+  "menu": "Menu",
+  "nav": {
+    "contact": "Contact",
+    "summary": "Summary",
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "certifications": "Certifications",
+    "languages": "Languages"
+  }
+}

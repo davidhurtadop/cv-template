@@ -1,0 +1,199 @@
+<a class="visually-hidden-focusable hz-skip" href="#main" data-cv="ui.skipToContent"></a>
+
+<header>
+  <nav class="navbar navbar-expand-lg fixed-top hz-navbar" aria-label="Sections">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#top" data-cv="name"></a>
+      <div class="d-flex align-items-center gap-2 order-lg-last">
+        <div class="dropdown" data-if="langMenu">
+          <button class="btn hz-icon-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-cv-attr="aria-label:ui.language;title:ui.language">
+            <svg class="icon" aria-hidden="true"><use href="vendor/bootstrap-icons/icons.svg#bi-translate"></use></svg>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <template data-repeat="langMenu">
+              <li><a class="dropdown-item" data-cv="name" data-cv-attr="href:href;lang:code;hreflang:code;aria-current:current"></a></li>
+            </template>
+          </ul>
+        </div>
+        <button class="btn hz-icon-btn" type="button" data-theme-toggle data-cv-attr="aria-label:ui.toggleTheme;title:ui.toggleTheme">
+          <svg class="icon hz-icon-sun" aria-hidden="true"><use href="vendor/bootstrap-icons/icons.svg#bi-sun"></use></svg>
+          <svg class="icon hz-icon-moon" aria-hidden="true"><use href="vendor/bootstrap-icons/icons.svg#bi-moon-stars"></use></svg>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hz-menu"
+                aria-controls="hz-menu" aria-expanded="false" data-cv-attr="aria-label:ui.menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="hz-menu" data-spy-nav>
+        <ul class="navbar-nav ms-auto me-lg-3">
+          <template data-repeat="sections">
+            <li class="nav-item"><a class="nav-link" data-cv="title" data-cv-attr="href:href"></a></li>
+          </template>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+  <section id="top" class="hz-hero" data-cv-attr="style:heroStyle;data-has-image:heroFlag">
+    <div class="container hz-hero-inner">
+      <img class="hz-photo" data-if="photo" data-cv-attr="src:photo;alt:name" width="160" height="160">
+      <h1 class="hz-name" data-cv="name"></h1>
+      <p class="hz-headline" data-if="taglineFallback" data-cv="taglineFallback"></p>
+      <p class="hz-headline" data-if="headlineText">
+        <span data-typed data-cv="headlineText" data-cv-attr="data-items:headlineJson"></span>
+      </p>
+      <div class="hz-actions">
+        <a class="btn btn-primary btn-lg" href="#contact" data-cv="ui.contactMe"></a>
+        <button class="btn btn-lg hz-btn-outline" type="button" data-print-pdf>
+          <svg class="icon me-1" aria-hidden="true"><use href="vendor/bootstrap-icons/icons.svg#bi-file-earmark-pdf"></use></svg><span data-cv="ui.downloadPdf"></span>
+        </button>
+        <ul class="list-inline mb-0 hz-social" data-if="social">
+          <template data-repeat="social">
+            <li class="list-inline-item">
+              <a class="hz-social-link" data-cv-attr="href:url;aria-label:label;title:label" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use data-cv-attr="href:icon"></use></svg>
+              </a>
+            </li>
+          </template>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hz-tech" data-if="tech" data-cv-attr="style:techStyle">
+      <div class="container"><p class="hz-tech-title" data-cv="ui.techTitle"></p></div>
+      <div class="hz-marquee">
+        <div class="hz-marquee-track">
+          <ul class="hz-marquee-group">
+            <template data-repeat="tech">
+              <li class="hz-chip">
+                <svg class="hz-chip-icon" aria-hidden="true" data-if="icon"><use data-cv-attr="href:icon"></use></svg>
+                <span data-cv="label"></span>
+              </li>
+            </template>
+          </ul>
+          <ul class="hz-marquee-group" aria-hidden="true">
+            <template data-repeat="tech">
+              <li class="hz-chip">
+                <svg class="hz-chip-icon" aria-hidden="true" data-if="icon"><use data-cv-attr="href:icon"></use></svg>
+                <span data-cv="label"></span>
+              </li>
+            </template>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="hz-section" data-if="has.contact">
+    <div class="container">
+      <h2 class="hz-title" data-cv="t.contact"></h2>
+      <ul class="row g-3 list-unstyled hz-contact">
+        <template data-repeat="contact">
+          <li class="col-md-6 col-lg-4">
+            <div class="hz-card h-100 d-flex align-items-center gap-3">
+              <svg class="icon hz-contact-icon" aria-hidden="true" data-if="icon"><use data-cv-attr="href:icon"></use></svg>
+              <div class="text-break">
+                <div class="hz-label" data-if="label" data-cv="label"></div>
+                <a data-if="href" data-cv-html="html" data-cv-attr="href:href"></a>
+                <span data-if="plain" data-cv-html="plain"></span>
+              </div>
+            </div>
+          </li>
+        </template>
+      </ul>
+    </div>
+  </section>
+
+  <section id="summary" class="hz-section hz-alt" data-if="summary">
+    <div class="container hz-narrow">
+      <h2 class="hz-title" data-cv="t.summary"></h2>
+      <div class="hz-prose" data-cv-html="summary"></div>
+    </div>
+  </section>
+
+  <section id="skills" class="hz-section" data-if="skills">
+    <div class="container">
+      <h2 class="hz-title" data-cv="t.skills"></h2>
+      <div class="row g-3">
+        <template data-repeat="skills">
+          <div class="col-md-6">
+            <div class="hz-card h-100">
+              <h3 class="hz-card-title" data-cv="label"></h3>
+              <p class="mb-0" data-cv-html="html"></p>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="hz-section hz-alt" data-if="experience">
+    <div class="container hz-narrow">
+      <h2 class="hz-title" data-cv="t.experience"></h2>
+      <ol class="hz-timeline list-unstyled">
+        <template data-repeat="experience">
+          <li class="hz-timeline-item">
+            <h3 class="hz-role"><span data-cv="role"></span> <span class="hz-company">· <span data-cv="company"></span></span></h3>
+            <p class="hz-period" data-cv="period"></p>
+            <ul class="hz-bullets">
+              <template data-repeat="bullets"><li data-cv-html="html"></li></template>
+            </ul>
+          </li>
+        </template>
+      </ol>
+    </div>
+  </section>
+
+  <section id="education" class="hz-section" data-if="education">
+    <div class="container hz-narrow">
+      <h2 class="hz-title" data-cv="t.education"></h2>
+      <ul class="hz-list list-unstyled">
+        <template data-repeat="education"><li class="hz-card" data-cv-html="html"></li></template>
+      </ul>
+    </div>
+  </section>
+
+  <section id="certifications" class="hz-section hz-alt" data-if="certifications">
+    <div class="container">
+      <h2 class="hz-title" data-cv="t.certifications"></h2>
+      <ul class="row g-3 list-unstyled">
+        <template data-repeat="certifications">
+          <li class="col-md-6"><div class="hz-card h-100" data-cv-html="html"></div></li>
+        </template>
+      </ul>
+    </div>
+  </section>
+
+  <section id="languages" class="hz-section" data-if="languages">
+    <div class="container hz-narrow">
+      <h2 class="hz-title" data-cv="t.languages"></h2>
+      <ul class="row g-3 list-unstyled">
+        <template data-repeat="languages">
+          <li class="col-sm-6">
+            <div class="hz-card h-100">
+              <div class="hz-label" data-cv="label"></div>
+              <span data-cv-html="html"></span>
+            </div>
+          </li>
+        </template>
+      </ul>
+    </div>
+  </section>
+
+  <template data-repeat="extra">
+    <section class="hz-section hz-alt" data-cv-attr="id:id">
+      <div class="container hz-narrow">
+        <h2 class="hz-title" data-cv="title"></h2>
+        <div class="hz-prose" data-cv-html="html"></div>
+      </div>
+    </section>
+  </template>
+</main>
+
+<footer class="hz-footer">
+  <div class="container d-flex flex-wrap justify-content-between gap-2">
+    <span>© <span data-cv="year"></span> <span data-cv="name"></span></span>
+  </div>
+</footer>
