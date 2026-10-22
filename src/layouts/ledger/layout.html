@@ -1,0 +1,138 @@
+<a class="visually-hidden-focusable ld-skip" href="#main" data-cv="ui.skipToContent"></a>
+
+<div class="ld-page" id="top">
+  <aside class="ld-side">
+    <div class="ld-controls">
+      <div class="dropdown" data-if="langMenu">
+        <button class="btn ld-icon-btn" type="button" data-bs-toggle="dropdown" data-bs-popper-config='{"strategy":"fixed"}'
+                aria-expanded="false" data-cv-attr="aria-label:ui.language;title:ui.language">
+          <svg class="icon" aria-hidden="true"><use href="vendor/bootstrap-icons/icons.svg#bi-translate"></use></svg>
+        </button>
+        <ul class="dropdown-menu">
+          <template data-repeat="langMenu">
+            <li><a class="dropdown-item" data-cv="name" data-cv-attr="href:href;lang:code;hreflang:code;aria-current:current"></a></li>
+          </template>
+        </ul>
+      </div>
+      <button class="btn ld-icon-btn" type="button" data-theme-toggle data-cv-attr="aria-label:ui.toggleTheme;title:ui.toggleTheme">
+        <svg class="icon ld-icon-sun" aria-hidden="true"><use href="vendor/bootstrap-icons/icons.svg#bi-sun"></use></svg>
+        <svg class="icon ld-icon-moon" aria-hidden="true"><use href="vendor/bootstrap-icons/icons.svg#bi-moon-stars"></use></svg>
+      </button>
+    </div>
+
+    <img class="ld-photo" data-if="photo" data-cv-attr="src:photo;alt:name" width="128" height="128">
+    <h1 class="ld-name" data-cv="name"></h1>
+    <p class="ld-headline" data-if="taglineFallback" data-cv="taglineFallback"></p>
+    <p class="ld-headline" data-if="headlineText">
+      <span data-typed data-cv="headlineText" data-cv-attr="data-items:headlineJson"></span>
+    </p>
+
+    <ul class="list-inline ld-social" data-if="social">
+      <template data-repeat="social">
+        <li class="list-inline-item">
+          <a class="ld-social-link" data-cv-attr="href:url;aria-label:label;title:label" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use data-cv-attr="href:icon"></use></svg>
+          </a>
+        </li>
+      </template>
+    </ul>
+
+    <nav class="ld-nav" aria-label="Sections" data-spy-nav>
+      <ul class="nav">
+        <template data-repeat="mainSections">
+          <li class="nav-item"><a class="nav-link" data-cv="title" data-cv-attr="href:href"></a></li>
+        </template>
+      </ul>
+    </nav>
+
+    <ul class="ld-contact list-unstyled" data-if="contact">
+      <template data-repeat="contact">
+        <li>
+          <svg class="icon" aria-hidden="true" data-if="icon"><use data-cv-attr="href:icon"></use></svg>
+          <a data-if="href" data-cv-html="html" data-cv-attr="href:href"></a>
+          <span data-if="plain" data-cv-html="plain"></span>
+        </li>
+      </template>
+    </ul>
+
+    <a class="btn btn-primary ld-pdf" role="button" href="#" data-print-pdf>
+      <svg class="icon me-1" aria-hidden="true"><use href="vendor/bootstrap-icons/icons.svg#bi-file-earmark-pdf"></use></svg><span data-cv="ui.downloadPdf"></span>
+    </a>
+  </aside>
+
+  <main id="main" class="ld-main">
+    <section id="summary" class="ld-section" data-if="summary">
+      <h2 class="ld-title" data-cv="t.summary"></h2>
+      <div class="ld-prose" data-cv-html="summary"></div>
+    </section>
+
+    <section id="skills" class="ld-section" data-if="skills">
+      <h2 class="ld-title" data-cv="t.skills"></h2>
+      <dl class="ld-rows">
+        <template data-repeat="skills">
+          <div class="ld-row">
+            <dt data-cv="label"></dt>
+            <dd data-cv-html="html"></dd>
+          </div>
+        </template>
+      </dl>
+      <div data-if="tech">
+        <p class="ld-label" data-cv="ui.techTitle"></p>
+        <ul class="ld-chips list-unstyled">
+          <template data-repeat="tech">
+            <li class="ld-chip">
+              <svg class="ld-chip-icon" aria-hidden="true" data-if="icon"><use data-cv-attr="href:icon"></use></svg>
+              <span data-cv="label"></span>
+            </li>
+          </template>
+        </ul>
+      </div>
+    </section>
+
+    <section id="experience" class="ld-section" data-if="experience">
+      <h2 class="ld-title" data-cv="t.experience"></h2>
+      <template data-repeat="experience">
+        <article class="ld-job">
+          <p class="ld-period" data-cv="period"></p>
+          <div>
+            <h3 class="ld-role" data-cv="role"></h3>
+            <p class="ld-company" data-cv="company"></p>
+            <ul class="ld-bullets">
+              <template data-repeat="bullets"><li data-cv-html="html"></li></template>
+            </ul>
+          </div>
+        </article>
+      </template>
+    </section>
+
+    <section id="education" class="ld-section" data-if="education">
+      <h2 class="ld-title" data-cv="t.education"></h2>
+      <ul class="ld-list list-unstyled"><template data-repeat="education"><li data-cv-html="html"></li></template></ul>
+    </section>
+
+    <section id="certifications" class="ld-section" data-if="certifications">
+      <h2 class="ld-title" data-cv="t.certifications"></h2>
+      <ul class="ld-list list-unstyled"><template data-repeat="certifications"><li data-cv-html="html"></li></template></ul>
+    </section>
+
+    <section id="languages" class="ld-section" data-if="languages">
+      <h2 class="ld-title" data-cv="t.languages"></h2>
+      <dl class="ld-rows">
+        <template data-repeat="languages">
+          <div class="ld-row"><dt data-cv="label"></dt><dd data-cv-html="html"></dd></div>
+        </template>
+      </dl>
+    </section>
+
+    <template data-repeat="extra">
+      <section class="ld-section" data-cv-attr="id:id">
+        <h2 class="ld-title" data-cv="title"></h2>
+        <div class="ld-prose" data-cv-html="html"></div>
+      </section>
+    </template>
+
+    <footer class="ld-footer">
+      <span>© <span data-cv="year"></span> <span data-cv="name"></span></span>
+    </footer>
+  </main>
+</div>

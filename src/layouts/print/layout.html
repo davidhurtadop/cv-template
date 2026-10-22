@@ -1,0 +1,66 @@
+<article class="pr">
+  <header class="pr-header">
+    <h1 class="pr-name" data-cv="name"></h1>
+    <p class="pr-tagline" data-cv="tagline"></p>
+    <ul class="pr-contact">
+      <template data-repeat="contact">
+        <li>
+          <span class="pr-label" data-if="label"><span data-cv="label"></span>: </span>
+          <span data-cv-html="html"></span>
+        </li>
+      </template>
+      <template data-repeat="socialExtra">
+        <li><span class="pr-label pr-cap"><span data-cv="label"></span>: </span><span data-cv="display"></span></li>
+      </template>
+    </ul>
+  </header>
+
+  <section data-if="summary">
+    <h2 data-cv="t.summary"></h2>
+    <div data-cv-html="summary"></div>
+  </section>
+
+  <section data-if="skills">
+    <h2 data-cv="t.skills"></h2>
+    <ul class="pr-plain">
+      <template data-repeat="skills"><li><strong data-cv="label"></strong>: <span data-cv-html="html"></span></li></template>
+    </ul>
+  </section>
+
+  <section data-if="experience">
+    <h2 data-cv="t.experience"></h2>
+    <template data-repeat="experience">
+      <div class="pr-entry">
+        <div class="pr-entry-head">
+          <h3><span data-cv="role"></span> — <span data-cv="company"></span></h3>
+          <span class="pr-period" data-cv="period"></span>
+        </div>
+        <ul><template data-repeat="bullets"><li data-cv-html="html"></li></template></ul>
+      </div>
+    </template>
+  </section>
+
+  <section data-if="education">
+    <h2 data-cv="t.education"></h2>
+    <ul class="pr-plain"><template data-repeat="education"><li data-cv-html="html"></li></template></ul>
+  </section>
+
+  <section data-if="certifications">
+    <h2 data-cv="t.certifications"></h2>
+    <ul class="pr-plain"><template data-repeat="certifications"><li data-cv-html="html"></li></template></ul>
+  </section>
+
+  <section data-if="languages">
+    <h2 data-cv="t.languages"></h2>
+    <ul class="pr-plain">
+      <template data-repeat="languages"><li><strong data-cv="label"></strong>: <span data-cv-html="html"></span></li></template>
+    </ul>
+  </section>
+
+  <template data-repeat="extra">
+    <section>
+      <h2 data-cv="title"></h2>
+      <div data-cv-html="html"></div>
+    </section>
+  </template>
+</article>

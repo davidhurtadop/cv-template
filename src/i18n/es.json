@@ -1,0 +1,18 @@
+{
+  "downloadPdf": "Descargar PDF",
+  "toggleTheme": "Cambiar entre tema claro y oscuro",
+  "skipToContent": "Saltar al contenido",
+  "language": "Idioma",
+  "contactMe": "Contáctame",
+  "techTitle": "Tecnologías con las que trabajo:",
+  "menu": "Menú",
+  "nav": {
+    "contact": "Contacto",
+    "summary": "Resumen",
+    "skills": "Competencias",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "certifications": "Certificaciones",
+    "languages": "Idiomas"
+  }
+}
