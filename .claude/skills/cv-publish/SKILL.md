@@ -1,34 +1,45 @@
 ---
 name: cv-publish
-description: Publish this CV site on GitHub Pages - run the checks, open a pull request (or push to main), set the Pages source and watch the deployment until the site is live.
-when_to_use: The user explicitly asks to deploy, publish, put the CV online, or open a pull request for their changes.
+description: Guide the user to send their CV changes to GitHub for review (a pull request), and after it is merged, publish them on the live website (GitHub Pages).
+when_to_use: The user explicitly asks to publish, deploy, put the CV online, share their changes, or open a pull request.
 disable-model-invocation: true
-allowed-tools: Bash(git status *) Bash(git branch *) Bash(git remote -v) Bash(git log *) Bash(git diff *) Bash(npm test) Bash(npm run validate)
+allowed-tools: Bash(git status *) Bash(git branch *) Bash(git remote -v) Bash(git log *) Bash(git diff *) Bash(git fetch origin) Bash(npm test) Bash(npm run validate)
 ---
 
 # cv-publish
 
-The deployment is `.github/workflows/pages.yml`: on every push to `main` it runs the tests and validation, then publishes `src/`. A change goes live when it reaches `main`.
+Two stages: **1. send changes for review**, **2. publish after the merge**. The site updates by itself when the pull request is merged into `main` (`.github/workflows/pages.yml` tests the content and publishes `src/`).
 
-## How to talk to the user
+## Style
 
-- **Every decision is a multiple-choice question** with the AskUserQuestion tool: 2 to 4 options, the safest or most useful first and labelled "(Recommended)", a header of at most 12 characters. Never ask "do you want me to...?" as plain text, and never ask two things in one message.
-- Pushing, opening a pull request, merging and changing repo settings affect the outside world. Before each, say in one line what will happen, then ask.
-- Show progress as a short checklist, one fact per line (for example `✔ Tests: 11 passed`). No long paragraphs, and keep each line under about 80 characters so it does not wrap badly in a terminal.
-- If a step fails, say which step, show the error in one or two lines, and offer options for what to do.
+- Talk like a helpful person, not like a console. Say "your changes", "your website", "send for review". Do the git and npm commands yourself and do not print them unless the user asks or something fails.
+- Every decision is an AskUserQuestion with 2 to 4 short options, the best one first and labelled "(Recommended)". One question at a time; never ask choices as plain text.
+- Before anything that leaves this computer (upload, pull request, merge, settings), say in one plain sentence what will happen, then ask.
+- Progress is a short checklist, one fact per line, under about 80 characters. Errors: say what went wrong in one or two plain lines, then offer options.
 
-## Steps
+## Start
 
-1. **Checks.** Run `npm test` and `npm run validate`. On errors stop and offer: fix them now (use the `cv-validate` steps), or stop here.
-2. **Config.** Read `src/config/site.json`. `owner.github` must be the user's GitHub account and `baseUrl` must match the final URL (`https://<owner>.github.io/<repo>/`, or `https://<owner>.github.io/` for a repo named `<owner>.github.io`). If something is off, ask what to correct.
-3. **Git state.** Run `git status`, `git branch --show-current`, `git remote -v`, and for a branch `git log main..HEAD --oneline` and `git diff main --stat`. Report it as a checklist: branch, commits ahead of `main`, files changed, clean or dirty tree. If the tree is dirty, ask: commit everything with a message you propose (Recommended), review the changes first, or stop.
-4. **Choose the route** (question): on a branch other than `main`: open a pull request (Recommended), or stop. On `main`: push straight to `main`, which deploys immediately (warn about that), or stop.
-5. **Push** (question). Say the exact command and that the repo is public. Options: push now (Recommended), show me the command to run myself, stop here. Run `git push -u origin <branch>` only after a yes.
-6. **Pull request.** Write a short title and a body (what changed, how it was checked), then ask how to continue:
-   - If `gh` is installed and authenticated: create the PR with `gh pr create --base main --head <branch>` (Recommended), or just show me the text.
-   - If `gh` is missing (do not install it): show the compare link `https://github.com/<owner>/<repo>/compare/main...<branch>?expand=1` with the title and body to paste (Recommended), open the link in my browser (`open <url>` on macOS), or stop. Walk the user through: open the link, paste the title and body, click "Create pull request".
-   - Say that the deploy does not run on the pull request, only after it is merged into `main`.
-7. **Pages source** (question, once per repo): Settings → Pages → Build and deployment → Source must be **GitHub Actions**. Options: already set, show me the click path (Recommended when unsure), check it with `gh` (only when `gh` works), skip for now. The click path is: repo → Settings → Pages → Source → choose GitHub Actions.
-8. **Merge** (question). The user decides. Options: I merged it, not merged yet, merge it for me (only when `gh` works; run `gh pr merge` only after an explicit yes). If not yet, tell them to come back and run `/cv-publish` again after merging.
-9. **Watch the deployment.** After the merge or push, watch the run (`gh run watch`, or give the Actions tab link `https://github.com/<owner>/<repo>/actions`) and report failures with the failing step and the error.
-10. **Done.** Give the live URL, offer to open it (question: open it, no thanks), and remind them that later edits deploy the same way: commit to a branch, open a pull request, merge.
+1. Quietly run `npm test` and `npm run validate`. If they pass, show one line: `✔ Your CV passed all checks`. If not, explain the problem simply and offer: fix it now (use the `cv-validate` steps) or stop.
+2. Quietly read `src/config/site.json` and `git remote -v`. If `owner.github` does not match the GitHub account in the remote, or `baseUrl` is not `https://<owner>.github.io/<repo>/` (or `https://<owner>.github.io/` for a repo named `<owner>.github.io`), say so in plain words and ask which value to correct.
+3. Ask: **"Where are you?"**
+   - "Send my changes for review (Recommended)": go to stage 1.
+   - "My changes were reviewed and merged": go to stage 2.
+   - "Just check my CV": stop after the checks.
+
+## Stage 1: send changes for review
+
+1. Check `git status` and `git branch --show-current`. Show: `✔ Branch: <name>`, `✔ <n> change(s) ready`, `✔ <n> files changed`. If there are uncommitted edits, ask: "Save them with a short description (Recommended)", "Let me look first", "Stop".
+2. If the branch is `main`, explain that changes should go through a branch so they can be reviewed, and ask: "Create a branch for me (Recommended)" or "Publish straight to the website without review" (say that it goes live immediately), or "Stop".
+3. Ask permission to upload: "This uploads your changes to GitHub (the repository is public). Nothing goes live yet." Options: "Upload them (Recommended)", "Stop". Then push the branch yourself.
+4. Write a short, plain title and description for the review (what changed, that checks passed). Then create the pull request:
+   - If the GitHub CLI `gh` works (`gh auth status`): ask "Create the review request for me (Recommended)" or "Just give me the text", then run `gh pr create --base main`.
+   - If `gh` is not installed (do not install it): offer "Open the GitHub page and copy the description for me (Recommended)" (macOS: `open <link>` and `pbcopy`) or "Just show me the text". The page is `https://github.com/<owner>/<repo>/compare/main...<branch>?expand=1`. Tell the user: paste the description, click the green **Create pull request** button.
+5. Finish with: `✔ Sent for review` and what happens next: "When you are happy, click **Merge pull request** on GitHub. Then run /cv-publish again and choose 'merged'." Do not merge it for them unless they ask.
+
+## Stage 2: publish after the merge
+
+1. Bring this computer up to date if needed: run `git fetch origin`; if the user is on the old branch, offer "Switch to the main branch and update it (Recommended)" or "Leave it".
+2. **First time only**: ask "Has GitHub Pages been turned on for this repository?" Options: "Yes", "Not sure / show me how (Recommended)", "No". For the last two give the plain steps: open the repository on GitHub, **Settings**, **Pages** in the left menu, under **Source** choose **GitHub Actions**. After that, ask "Done?" before continuing.
+3. Check the deployment: with a working `gh`, run `gh run watch`; otherwise open `https://github.com/<owner>/<repo>/actions` for the user and tell them to look for a green check on the latest run ("Deploy to GitHub Pages"). Ask "Is it green?": "Yes", "Still running", "It failed". If it failed, read the failing step and explain it plainly.
+4. When it is green, show `✔ Your website is updated` and the address `https://<owner>.github.io/<repo>/`. Ask "Open it now?" with options "Open it (Recommended)", "No thanks".
+5. Remind them in one line that later edits work the same way: make changes, run /cv-publish, review, merge.
