@@ -17,3 +17,5 @@ Read `docs/cv-schema.md` if you haven't in this session. Requested change: $ARGU
    - **Hide a contact field**: add its key (`phone`, `email`, `location` or the explicit `{#key}`) to `hide` in every file. Tell the user the value still sits in the markdown and git history of a public repo, and offer to remove the line instead.
    - **Images**: files go in `src/img/` with the specs in `docs/images.md`.
 4. Never edit `src/vendor/`. Run `cv-validate`.
+
+Ask choices (which field to hide, which network, replace or add) with AskUserQuestion, as in `.claude/rules/skills.md`.

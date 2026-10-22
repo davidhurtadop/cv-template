@@ -17,7 +17,7 @@ Entry point for the CV site. Read `docs/cv-schema.md` once before touching conte
 
 ## 2a. First-time mode (from scratch)
 
-The repo still holds the template author's CV. Ask one question at a time (use AskUserQuestion when the options are fixed) and keep a short running summary.
+The repo still holds the template author's CV. Ask one question at a time (use AskUserQuestion for every choice, as in `.claude/rules/skills.md`) and keep a short running summary.
 
 1. Name, headline roles (the typed titles), one-line description.
 2. Default language and extra languages (codes such as `en`, `es`).

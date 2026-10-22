@@ -19,3 +19,5 @@ Read `docs/cv-schema.md` first. Source: $ARGUMENTS (ask for the file or pasted t
 3. Keep the person's wording, dates and numbers. **Never invent or drop information.** Normalise only formatting (date format, bullet style).
 4. End with a list of what you were unsure about or had to guess (missing dates, ambiguous titles, skipped content). Do not silently resolve it.
 5. If the file would replace the live CV, say so and confirm before overwriting. Run `cv-validate`. For other languages continue with `cv-translate`.
+
+Ask choices with AskUserQuestion, as in `.claude/rules/skills.md`.

@@ -18,3 +18,5 @@ Read `docs/cv-schema.md` first. Target language: $ARGUMENTS (ask for the languag
    - Contact labels: if a translated label is not recognised (see `KEY_ALIASES` in `src/js/core/schema.js`), add an explicit key such as `**Telefon {#phone}:**` so `hide` and the icons keep working.
 3. New language only: add the code to `languages` in `src/config/site.json`, and create `src/i18n/<code>.json` from `src/i18n/en.json` (same keys, translated values, including the `nav` labels).
 4. Run `cv-validate`. Ask the user to review the translation: the person's own CV is theirs to approve.
+
+Ask choices (for example which language to add) with AskUserQuestion, as in `.claude/rules/skills.md`.
