@@ -33,7 +33,7 @@ Before changing anything, **list what you are about to replace or delete and get
 
 - Write `src/content/cv.<code>.md` for each language (translations through `cv-translate`), update `src/config/site.json` (`owner.github`, `languages`, `defaultLang`, `layout`, `defaultTheme`, `accent`) and `src/i18n/<code>.json` (copy `en.json`, translate the values).
 - Run the `cv-validate` steps, then `npm start` so the user can look at http://localhost:3000.
-- Offer `cv-publish`.
+- Offer `cv-pr` to send the result for review.
 
 ## 2b. Maintenance mode (the usual case)
 
@@ -45,6 +45,6 @@ Ask what changed and route:
 | Add a language or re-sync a translation | `cv-translate` |
 | Replace the CV from a PDF, Word, LinkedIn or text version | `cv-import` |
 | Check everything | `cv-validate` |
-| Put it online | `cv-publish` |
+| Send changes for review / get them online | `cv-pr` |
 
 Finish every change with `cv-validate`.

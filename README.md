@@ -26,7 +26,7 @@ This repository is also the author's own live site, so it works as a template: c
    3. Open the **Actions** tab. The *Deploy to GitHub Pages* workflow runs on every push to `main`: it runs the tests and validation, then publishes the `src/` folder.
    4. When it is green, your site is at `https://<username>.github.io/<repo-name>/` (shown in the workflow summary). Put that URL in `baseUrl`.
 
-After that, updating your CV is: edit the markdown, commit to `main` (directly or by merging a pull request), wait about a minute. In Claude Code, `/cv-publish` walks you through the pull request, the merge and the deployment.
+After that, updating your CV is: edit the markdown, commit to `main` (directly or by merging a pull request), wait about a minute. In Claude Code, `/cv-pr` opens the pull request for review; once it is merged into `main` the site updates by itself.
 
 ## PDF
 

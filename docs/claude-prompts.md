@@ -2,7 +2,7 @@
 
 Copy-paste prompts for common jobs. Run them in Claude Code at the root of this repo, or paste them into any chat together with the file [cv-schema.md](cv-schema.md), which defines the markdown format. Replace the `<...>` parts.
 
-In Claude Code, most of these exist as skills that follow the same steps: `cv-setup` (start here), `cv-update`, `cv-translate`, `cv-import`, `cv-validate`, `cv-publish`. Just describe what you want, or type the skill name.
+In Claude Code, most of these exist as skills that follow the same steps: `cv-setup` (start here), `cv-update`, `cv-translate`, `cv-import`, `cv-validate`, `cv-pr`. Just describe what you want, or type the skill name.
 
 Always finish with `npm test && npm run validate`. Claude should run them and fix what they report.
 
@@ -42,6 +42,6 @@ In Claude Code you can also ask for the `cv-reviewer` subagent.
 
 > Read `src/content/cv.<code>.md` as a recruiter would. Report, without editing: vague bullets without results, inconsistent date formats, missing sections, typos and anything an applicant tracking system might misread. Then wait for me to choose what to change.
 
-## 9. Publish
+## 9. Open a pull request for review
 
-> Follow the deployment steps in `README.md`: run the checks, tell me what to set in Settings → Pages, and after I push to `main` help me read the Actions run until the site is live.
+> Run the checks (`npm test && npm run validate`). Then upload my current branch and open a pull request into `main` with a short title and a description of what changed and that the checks passed. Do not merge it. Tell me that when a reviewer approves and it is merged, the GitHub Pages workflow updates the site by itself, and remind me of the one-time setting: repository Settings → Pages → Source = GitHub Actions.
