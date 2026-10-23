@@ -31,7 +31,7 @@ After that, updating your CV is: edit the markdown, commit to `main` (directly o
 
 ## PDF
 
-The **Download PDF** button (and Ctrl/Cmd+P) prints an A4 version of the CV built from the same markdown, in the current language. In the print dialog choose **Save as PDF**; the file name is proposed from your name. The PDF always prints dark-on-white, and hidden contact fields are left out. The text stays selectable.
+The **Download PDF** button (and Ctrl/Cmd+P) prints an A4 version of the CV built from the same markdown, in the current language. In the print dialog choose **Save as PDF**; the proposed file name is "CV - Your Name (en)", in the current language. The PDF always prints dark-on-white, and hidden contact fields are left out. The text stays selectable.
 
 ## Using Claude to edit your CV
 
