@@ -1,6 +1,6 @@
 ---
 lang: en
-title: "CV – David Augusto Hurtado Pipicano"
+title: "David Augusto Hurtado Pipicano"
 description: "Software Engineer with {{years}} years of experience: Python, C#/.NET, SQL, CI/CD and AI-assisted development."
 career_start: 2012-02
 headline: [Senior Software Engineer, Python Developer, C# Developer]
