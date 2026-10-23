@@ -1,6 +1,6 @@
 ---
 lang: en
-title: "CV – David Augusto Hurtado Pipicano"
+title: "David Augusto Hurtado Pipicano"
 description: "Software Engineer with {{years}} years of experience: Python, C#/.NET, SQL, CI/CD and AI-assisted development."
 career_start: 2012-02
 headline: [Senior Software Engineer, Python Developer, C# Developer]
@@ -18,7 +18,7 @@ social:
 * **LinkedIn:** https://www.linkedin.com/in/dahurtadop/
 
 ## PROFESSIONAL SUMMARY {#summary}
-Software Engineer with {{years}} years of experience across the full software development lifecycle, including 5 years of hands-on Python development (FlaskAPI) building and maintaining REST APIs and backend services. Strong background in database systems and SQL (PL/SQL, MySQL, SQL Server), testing at all levels (Pytest, Unittest, NUnit, MsTest), Git-based version control, and CI/CD pipelines (Azure DevOps). Practiced in Agile delivery (Scrum, Kanban), architecture and design-pattern-driven development, and applying AI to the SDLC through hands-on training in agentic tools and workflows. Proven ability to lead technical initiatives, mentor engineers, and review team output to raise code quality.
+Software Engineer with {{years}} years of experience across the full software development lifecycle, including 5 years of hands-on Python development (Flask) building and maintaining REST APIs and backend services. Strong background in database systems and SQL (PL/SQL, MySQL, SQL Server), testing at all levels (Pytest, Unittest, NUnit, MsTest), Git-based version control, and CI/CD pipelines (Azure DevOps). Practiced in Agile delivery (Scrum, Kanban), architecture and design-pattern-driven development, and applying AI to the SDLC through hands-on training in agentic tools and workflows. Proven ability to lead technical initiatives, mentor engineers, and review team output to raise code quality.
 
 ## CORE COMPETENCIES {#skills}
 * **Backend development:** Python (Flask — REST API design and delivery), C# / .NET Core
@@ -43,7 +43,7 @@ Software Engineer with {{years}} years of experience across the full software de
 
 **Software Engineer III** — ENCORA
 *11/2021 – 10/2023*
-* Designed and delivered REST APIs and backend services in Python (Flask), integrated with AWS and on-premise systems — experience directly relevant to FastAPI-style API development.
+* Designed and delivered REST APIs and backend services in Python (Flask), integrated with AWS and on-premise systems.
 * Led unit and integration testing across Python and .NET components (Pytest, Unittest, NUnit, MsTest), improving reliability and reducing defects.
 * Implemented OpenAPI specifications and synthetic tests to support monitoring and alerting workflows.
 * Built and improved Azure DevOps CI/CD pipelines to streamline release processes.

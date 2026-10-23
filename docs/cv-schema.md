@@ -39,7 +39,7 @@ Write `{{years}}` anywhere in the text (summary, bullets, `description`) and it 
 ```md
 ---
 lang: en
-title: "CV – Your Name"
+title: "Your Name"
 description: "One sentence used by search engines and link previews."
 headline: [Your Role, Another Role]       # typed in the hero banner
 # hero_image: img/hero.jpg                # optional, see docs/images.md

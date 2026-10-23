@@ -5,7 +5,7 @@
   "description": "Markdown-driven CV site for GitHub Pages: light/dark, multilingual, PDF export.",
   "type": "module",
   "scripts": {
-    "start": "npx --yes serve src --listen 3000",
+    "start": "node scripts/serve.mjs",
     "test": "node --test",
     "validate": "node scripts/validate.mjs"
   },

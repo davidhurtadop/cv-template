@@ -19,14 +19,22 @@ function apply(theme) {
 
 /**
  * Order of precedence: ?theme= (preview only) > saved choice > config.defaultTheme > system.
- * index.html already applied saved/system before first paint; this reconciles it with the config.
+ * index.html already applied the same order before first paint, reading the default from its
+ * <meta name="theme-default">; validate.mjs checks that meta matches config.defaultTheme.
+ * With no saved choice and an `auto` default, the page follows system changes live.
  */
 export function initTheme(defaultTheme = 'auto') {
   const forced = new URLSearchParams(location.search).get('theme');
   const stored = read();
+  const fixedDefault = defaultTheme === 'light' || defaultTheme === 'dark';
   if (forced === 'light' || forced === 'dark') apply(forced);
   else if (stored === 'light' || stored === 'dark') apply(stored);
-  else apply(defaultTheme === 'light' || defaultTheme === 'dark' ? defaultTheme : systemTheme());
+  else apply(fixedDefault ? defaultTheme : systemTheme());
+
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const chosen = read();
+    if (!forced && chosen !== 'light' && chosen !== 'dark' && !fixedDefault) apply(systemTheme());
+  });
 
   for (const button of document.querySelectorAll('[data-theme-toggle]')) {
     button.addEventListener('click', () => {
