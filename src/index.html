@@ -3,15 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CV</title>
-  <meta name="description" content="">
+  <!-- Static copies of the default-language title and description, for link previews (LinkedIn,
+       WhatsApp, Slack) and crawlers that don't run JavaScript. The page replaces them at runtime;
+       `npm run validate` warns when they no longer match src/content/ and src/config/site.json. -->
+  <title>CV – David Augusto Hurtado Pipicano</title>
+  <meta name="description" content="Software Engineer with 14 years of experience: Python, C#/.NET, SQL, CI/CD and AI-assisted development.">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="CV – David Augusto Hurtado Pipicano">
+  <meta property="og:description" content="Software Engineer with 14 years of experience: Python, C#/.NET, SQL, CI/CD and AI-assisted development.">
+  <meta property="og:url" content="https://davidhurtadop.github.io/cv-template/">
+  <meta name="twitter:card" content="summary">
+  <!-- Must match "defaultTheme" in config/site.json: auto, light or dark. -->
+  <meta name="theme-default" content="auto">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <script>
-    // Apply the saved or system colour scheme before first paint to avoid a flash.
+    // Apply the theme before first paint to avoid a flash: saved choice > default > system.
     (function () {
       var stored = null;
       try { stored = localStorage.getItem('theme'); } catch (e) {}
-      var dark = stored ? stored === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.setAttribute('data-bs-theme', dark ? 'dark' : 'light');
+      var meta = document.querySelector('meta[name="theme-default"]');
+      var fallback = meta ? meta.content : 'auto';
+      var theme = stored === 'light' || stored === 'dark' ? stored
+        : fallback === 'light' || fallback === 'dark' ? fallback
+        : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-bs-theme', theme);
     })();
   </script>
   <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
@@ -19,7 +34,7 @@
   <link rel="stylesheet" href="css/base.css">
 </head>
 <body>
-  <div id="app" aria-live="polite"></div>
+  <div id="app"></div>
   <noscript>
     <p class="p-4">This page needs JavaScript. You can read the CV as plain text in
       <a href="content/cv.en.md">content/cv.en.md</a>.</p>

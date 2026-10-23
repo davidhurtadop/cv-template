@@ -4,18 +4,17 @@
 //   data-cv-attr="name:path;..."   set attributes (e.g. href:contact.href)
 //   data-if="path"                 keep the element only when the value is non-empty
 //   <template data-repeat="path">  clone its content once per array item
-// Paths resolve against the current item first, then the root view model.
+// Inside a repeat, paths resolve against the current item only; write `@root.path` to read the
+// page-level view model from inside a repeat. This keeps a missing item key from silently
+// showing an unrelated page-level value.
 
 export function get(scopes, path) {
-  const parts = path.split('.');
-  for (const scope of scopes) {
-    let value = scope;
-    for (const part of parts) {
-      value = value == null ? undefined : value[part];
-    }
-    if (value !== undefined) return value;
+  const fromRoot = path.startsWith('@root.');
+  let value = fromRoot ? scopes[scopes.length - 1] : scopes[0];
+  for (const part of (fromRoot ? path.slice(6) : path).split('.')) {
+    value = value == null ? undefined : value[part];
   }
-  return undefined;
+  return value;
 }
 
 const isEmpty = (v) => v == null || v === '' || v === false || (Array.isArray(v) && !v.length);

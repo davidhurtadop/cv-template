@@ -10,7 +10,12 @@ export function initTyped(root = document) {
   try { items = JSON.parse(el.dataset.items ?? '[]'); } catch { return; }
   if (items.length < 2 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  el.setAttribute('aria-label', items.join(', '));
+  // Screen readers get the full list once; the animated text is hidden from them.
+  const spoken = document.createElement('span');
+  spoken.className = 'visually-hidden';
+  spoken.textContent = items.join(', ');
+  el.before(spoken);
+  el.setAttribute('aria-hidden', 'true');
   el.textContent = '';
   el.classList.add('is-typing');
   const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));

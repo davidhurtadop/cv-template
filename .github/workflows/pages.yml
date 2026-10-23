@@ -1,30 +1,39 @@
 name: Deploy to GitHub Pages
 
 on:
+  # Pull requests into main are checked (tests + content validation) but never deployed.
+  pull_request:
+    branches: [main]
   push:
     branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
       - run: npm test
       - run: npm run validate
 
   deploy:
     needs: validate
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    # One deployment at a time; queued runs wait instead of cancelling a deploy in progress.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

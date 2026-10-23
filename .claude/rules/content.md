@@ -1,6 +1,7 @@
 ---
 paths:
   - "src/content/**"
+  - "src/index.html"
   - "src/i18n/**"
   - "src/config/**"
 ---
@@ -13,4 +14,5 @@ paths:
 - `hide:` only keeps a contact field off the page and the PDF. The value stays in the markdown file and git history, and this repo is public: never describe `hide` as removal.
 - Every code in `src/config/site.json` `languages` needs `src/content/cv.<code>.md` and `src/i18n/<code>.json` (same keys as `en.json`).
 - Social networks must exist in `src/js/core/icons.js`, `tech` slugs in `src/js/core/tech.js`.
+- When the default-language `title` or `description`, `baseUrl` or `defaultTheme` changes, update the matching static tags at the top of `src/index.html` (title, description, `og:*`, `theme-default`).
 - Run `npm test && npm run validate` after changes.

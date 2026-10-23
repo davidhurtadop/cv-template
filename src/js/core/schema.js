@@ -17,6 +17,9 @@ export const SECTION_KINDS = {
 
 export const REQUIRED_META = ['lang', 'title'];
 
+// Selectable page layouts (folders in src/layouts/). `print` is the A4 view and is always loaded.
+export const LAYOUTS = ['horizon', 'ledger'];
+
 // Contact/skills labels are turned into language-independent keys so `hide: [phone]`, icons and
 // mailto:/tel: links work in every language. Add a row (or write `**Label {#phone}:**` in the
 // markdown) for a language that is not listed.

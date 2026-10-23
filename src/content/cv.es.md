@@ -18,7 +18,7 @@ social:
 * **LinkedIn:** https://www.linkedin.com/in/dahurtadop/
 
 ## RESUMEN PROFESIONAL {#summary}
-Ingeniero de Software con {{years}} años de experiencia en todo el ciclo de vida del desarrollo de software, incluidos 5 años de desarrollo práctico en Python (FlaskAPI) construyendo y manteniendo APIs REST y servicios backend. Sólida trayectoria en bases de datos y SQL (PL/SQL, MySQL, SQL Server), pruebas en todos los niveles (Pytest, Unittest, NUnit, MsTest), control de versiones con Git y pipelines de CI/CD (Azure DevOps). Experiencia en entrega ágil (Scrum, Kanban), desarrollo guiado por arquitectura y patrones de diseño, y en la aplicación de IA al ciclo de desarrollo mediante formación práctica en herramientas y flujos de trabajo con agentes. Capacidad comprobada para liderar iniciativas técnicas, mentorizar ingenieros y revisar el trabajo del equipo para elevar la calidad del código.
+Ingeniero de Software con {{years}} años de experiencia en todo el ciclo de vida del desarrollo de software, incluidos 5 años de desarrollo práctico en Python (Flask) construyendo y manteniendo APIs REST y servicios backend. Sólida trayectoria en bases de datos y SQL (PL/SQL, MySQL, SQL Server), pruebas en todos los niveles (Pytest, Unittest, NUnit, MsTest), control de versiones con Git y pipelines de CI/CD (Azure DevOps). Experiencia en entrega ágil (Scrum, Kanban), desarrollo guiado por arquitectura y patrones de diseño, y en la aplicación de IA al ciclo de desarrollo mediante formación práctica en herramientas y flujos de trabajo con agentes. Capacidad comprobada para liderar iniciativas técnicas, mentorizar ingenieros y revisar el trabajo del equipo para elevar la calidad del código.
 
 ## COMPETENCIAS CLAVE {#skills}
 * **Desarrollo backend:** Python (Flask — diseño y entrega de APIs REST), C# / .NET Core
@@ -43,7 +43,7 @@ Ingeniero de Software con {{years}} años de experiencia en todo el ciclo de vid
 
 **Ingeniero de Software III** — ENCORA
 *11/2021 – 10/2023*
-* Diseñé y entregué APIs REST y servicios backend en Python (Flask), integrados con AWS y sistemas on-premise — experiencia directamente relevante para el desarrollo de APIs al estilo FastAPI.
+* Diseñé y entregué APIs REST y servicios backend en Python (Flask), integrados con AWS y sistemas on-premise.
 * Lideré las pruebas unitarias y de integración en componentes Python y .NET (Pytest, Unittest, NUnit, MsTest), mejorando la confiabilidad y reduciendo defectos.
 * Implementé especificaciones OpenAPI y pruebas sintéticas para apoyar los flujos de monitoreo y alertas.
 * Construí y mejoré pipelines de CI/CD en Azure DevOps para agilizar los procesos de liberación.

@@ -41,13 +41,21 @@ export function languageMenu(config, current) {
   });
 }
 
-/** Adds <link rel="alternate" hreflang> tags so search engines know the translations. */
-export function addAlternateLinks(config) {
-  for (const code of config.languages) {
-    const link = document.createElement('link');
-    link.rel = 'alternate';
-    link.hreflang = code;
-    link.href = `${config.baseUrl ?? ''}?lang=${code}`;
-    document.head.append(link);
-  }
+const pageUrl = (config, code) => (code === config.defaultLang ? config.baseUrl : `${config.baseUrl}?lang=${code}`);
+
+function addLink(rel, href, hreflang) {
+  const link = document.createElement('link');
+  link.rel = rel;
+  link.href = href;
+  if (hreflang) link.hreflang = hreflang;
+  document.head.append(link);
+}
+
+/** Canonical URL for the current language, plus hreflang alternates (and x-default) for search engines. */
+export function addAlternateLinks(config, current) {
+  if (!config.baseUrl) return;
+  addLink('canonical', pageUrl(config, current));
+  if (config.languages.length < 2) return;
+  for (const code of config.languages) addLink('alternate', pageUrl(config, code), code);
+  addLink('alternate', config.baseUrl, 'x-default');
 }

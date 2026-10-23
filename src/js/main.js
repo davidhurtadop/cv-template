@@ -1,6 +1,7 @@
 import { loadJson, loadOptionalJson, loadText } from './core/loader.js';
 import { applyHidden, parseCv } from './core/parse-cv.js';
 import { buildViewModel } from './core/view-model.js';
+import { LAYOUTS } from './core/schema.js';
 import { render } from './core/render.js';
 import { initTheme } from './features/theme.js';
 import { initTyped } from './features/typed.js';
@@ -22,7 +23,7 @@ async function main() {
   const lang = pickLanguage(config);
   // ?layout=ledger previews another layout without editing the config.
   const requested = params.get('layout');
-  const layout = /^[a-z][a-z-]*$/.test(requested ?? '') ? requested : config.layout;
+  const layout = LAYOUTS.includes(requested) ? requested : config.layout;
   const layoutPath = `layouts/${layout}`;
 
   const [markdown, ui, layoutHtml, printHtml] = await Promise.all([
@@ -41,7 +42,7 @@ async function main() {
   document.title = vm.title;
   document.querySelector('meta[name="description"]').content = vm.description;
   addStylesheet(`${layoutPath}/layout.css`);
-  if (config.languages.length > 1) addAlternateLinks(config);
+  addAlternateLinks(config, lang);
 
   const app = document.getElementById('app');
   app.innerHTML = layoutHtml;
@@ -60,6 +61,11 @@ async function main() {
 
 main().catch((error) => {
   console.error(error);
-  document.getElementById('app').innerHTML =
-    `<div class="container py-5"><div class="alert alert-danger">Could not load the CV: ${error.message}</div></div>`;
+  const alert = document.createElement('div');
+  alert.className = 'alert alert-danger';
+  alert.textContent = `Could not load the CV: ${error.message}`;
+  const box = document.createElement('div');
+  box.className = 'container py-5';
+  box.append(alert);
+  document.getElementById('app').replaceChildren(box);
 });

@@ -6,7 +6,7 @@ This repository is also the author's own live site, so it works as a template: c
 
 ## Make your own CV site
 
-1. **Copy the repo.** On GitHub choose **Use this template** (or **Fork**) and name it. For a profile site named `<username>.github.io` or any project name, both work.
+1. **Copy the repo.** On GitHub choose **Use this template** (or **Fork**) and name it. (Repository owners: the **Use this template** button only appears after ticking **Template repository** in Settings → General.) For a profile site named `<username>.github.io` or any project name, both work.
 2. **Replace the content.** Edit these files; nothing else is needed:
 
    | File | What to change |
@@ -15,15 +15,16 @@ This repository is also the author's own live site, so it works as a template: c
    | `src/content/cv.es.md` | The same CV in a second language. Delete it (and remove `es` from `languages` below) if you only need one. |
    | `src/config/site.json` | `owner.github` (your username), `languages`, `defaultLang`, `layout` (`horizon` or `ledger`), `defaultTheme` (`auto`, `light` or `dark`), `accent` colour, `baseUrl` (your final Pages URL). |
    | `src/i18n/<lang>.json` | Button and menu labels for each language. Copy `en.json` for a new language. |
+   | `src/index.html` | The `<title>`, description and `og:` tags near the top: copies of your default-language title and description so link previews (LinkedIn, WhatsApp) show your name. Also `theme-default`, which must match `defaultTheme`. `npm run validate` warns when they drift. |
    | `src/img/` | Optional hero image and profile photo, referenced from the front matter. See [docs/images.md](docs/images.md) for sizes. |
 
    Hide private contact details with `hide: [phone]` in the front matter. They are removed from the page, but **they stay in the markdown file and git history, so don't commit data you need to keep private** in a public repo.
-3. **Preview locally** (needs Node 20+): `npm start`, then open http://localhost:3000. Add `?lang=es`, `?theme=dark`, `?layout=ledger` or `?debug=1` to the URL to test a language, a theme, the other layout, or to list missing sections.
+3. **Preview locally** (needs Node 20+, nothing to install): `npm start`, then open http://localhost:3000. Add `?lang=es`, `?theme=dark`, `?layout=ledger` or `?debug=1` to the URL to test a language, a theme, the other layout, or to list missing sections.
 4. **Check your content:** `npm test && npm run validate`. It catches missing sections, language mismatches, unknown social networks and oversized images.
 5. **Deploy** (once per repo):
    1. Push your changes to the `main` branch.
    2. In the repo go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
-   3. Open the **Actions** tab. The *Deploy to GitHub Pages* workflow runs on every push to `main`: it runs the tests and validation, then publishes the `src/` folder.
+   3. Open the **Actions** tab. The *Deploy to GitHub Pages* workflow runs the tests and validation on every pull request into `main` (without deploying), and on every push or merge to `main` it also publishes the `src/` folder.
    4. When it is green, your site is at `https://<username>.github.io/<repo-name>/` (shown in the workflow summary). Put that URL in `baseUrl`.
 
 After that, updating your CV is: edit the markdown, commit to `main` (directly or by merging a pull request), wait about a minute. In Claude Code, `/cv-pr` opens the pull request for review; once it is merged into `main` the site updates by itself.
