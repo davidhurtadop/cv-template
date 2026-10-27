@@ -36,51 +36,55 @@ Senior Software Engineer with {{years}} years of experience across the full soft
 **Senior Software Engineer** — ENCORA / COFORGE
 *10/2023 – Present*
 * Lead technical initiatives and mentor newly onboarded engineers on internal tools, APIs, and engineering best practices, reviewing their work to raise quality standards.
+* Maintain and evolve the team's owned APIs in Python and C# (.NET 6+), keeping high standards with unit tests (Unittest, Pytest, MsTest).
 * Design and document architectures for new systems and API integrations, applying clean code and design-pattern principles.
-* Implement Infrastructure as Code (Terraform) and manage CI/CD deployments through Azure Pipelines.
+* Implement Infrastructure as Code (Terraform) and manage CI/CD deployments of APIs through Azure Pipelines.
 * Champion Agile (Scrum/Kanban) practices to improve team delivery speed and quality.
-* Apply AI to the software development lifecycle through Generative AI Centers of Excellence and hands-on training in agentic development tools and AI-assisted workflows.
+* Apply AI to the software development lifecycle through Centers of Excellence and bootcamps on Generative AI and AWS best practices, and hands-on training in agentic development tools and AI-assisted workflows.
 * Apply Claude Code in production projects to CI/CD pipelines, code review and coding-style standards.
 
 **Software Engineer III** — ENCORA
 *11/2021 – 10/2023*
-* Designed and delivered REST APIs and backend services in Python (Flask), integrated with AWS and on-premise systems.
-* Led unit and integration testing across Python and .NET components (Pytest, Unittest, NUnit, MsTest), improving reliability and reducing defects.
-* Implemented OpenAPI specifications and synthetic tests to support monitoring and alerting workflows.
-* Built and improved Azure DevOps CI/CD pipelines to streamline release processes.
-* Used Datadog and Splunk for production troubleshooting and performance analysis.
+* Designed and delivered REST APIs and backend services with cross-functional teams for complex business needs (Python, Flask, AWS, Azure DevOps, Terraform, Git), integrated with AWS and on-premise systems.
+* Led unit and integration testing for APIs and services across Python and .NET 6 components (Pytest, Unittest, NUnit, MsTest), improving reliability and reducing defects.
+* Created and deployed OpenAPI specifications and synthetic tests for customer-facing APIs to support performance monitoring and alerting.
+* Built and improved Azure DevOps CI/CD pipelines for faster and more reliable releases.
+* Troubleshot and resolved production issues using AWS CloudWatch, Datadog and Splunk.
 
 **Software Engineer** — MVM
 *01/2020 – 11/2021*
-* Developed and optimized database-backed business logic in Oracle and SQL Server (PL/SQL, C#).
+* Analyzed business requirements for EPM customer systems and developed and optimized database-backed business logic in Oracle and SQL Server (PL/SQL, C#).
 * Implemented automated tests and debugging processes to increase system stability.
 * Managed deployments and source control using Git and Azure DevOps.
 * Executed API testing (SOAP & REST) using SoapUI and Postman to validate integrations.
 
 **Development Engineer** — AXEDE
 *03/2019 – 12/2019*
-* Delivered requirements and API integrations for utilities-sector systems using C# and PL/SQL (Oracle).
+* Analyzed, designed and implemented requirements for utilities-sector business systems using C# and PL/SQL (Oracle).
+* Delivered API solutions integrating Oracle systems with customer platforms.
 * Led debugging and issue resolution to improve application stability.
 
 **OSF Consultant Engineer** — OPTIMA CONSULTING
 *10/2016 – 03/2019*
-* Coordinated a support and development team delivering solutions to public service and telecom clients.
-* Participated in requirements gathering, design, development, and deployment phases, managing incidents against SLAs.
+* Coordinated a support and development team delivering OSF (Open Smartflex) solutions and software updates to public service and telecom clients.
+* Led requirements gathering, design, development and deployment of OSF projects, managing incidents against SLAs.
 
 **Development Engineer** — ARQUITECSOFT
 *02/2016 – 10/2016*
-* Implemented and deployed backend solutions; produced reports and integrations using .NET and Oracle SQL.
+* Developed and deployed OSF (Open Smartflex) 7.07 solutions for public service and telecom clients.
+* Produced reports and system integrations using .NET, Crystal Reports and Oracle SQL.
 
 **Development Engineer** — OPEN SYSTEMS INTERNATIONAL
 *02/2012 – 02/2016*
-* Designed and implemented backend solutions and resolved production issues, building the SQL and systems-integration foundation for later Python/API work.
+* Designed, developed and deployed Open Smartflex (OSF) solutions for public service and telecom clients.
+* Resolved production issues in OSF versions 7.07 and 7.08, building the SQL and systems-integration foundation for later API work.
 
 ## EDUCATION {#education}
 * **Master in Data Science and Big Data** — IEBS, Madrid (2021 – 2023)
 * **Software Engineering** — Universidad del Cauca, Popayán (2005 – 2015)
 
 ## CERTIFICATIONS {#certifications}
-* AWS Certified Solutions Architect Associate — AWS
+* AWS Certified Solutions Architect – Associate — AWS (2023)
 * Generative AI Expert Skills — Encora
 * Diplomado en Gerencia de Proyectos PMI — Universidad ICESI
 * REST APIs with Flask and Python — Udemy (2026)
