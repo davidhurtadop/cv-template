@@ -1,9 +1,9 @@
 ---
 lang: en
 title: "David Augusto Hurtado Pipicano"
-description: "Software Engineer with {{years}} years of experience: Python, C#/.NET, SQL, CI/CD and AI-assisted development."
+description: "Senior Software Engineer with {{years}} years of experience: .NET (C#), Python, AWS, CI/CD and Generative AI."
 career_start: 2012-02
-headline: [Senior Software Engineer, Python Developer, C# Developer]
+headline: [Senior Software Engineer, .NET (C#) Developer, Python Developer, AWS Developer, Generative AI Practitioner]
 tech: [python, flask, csharp, dotnet, aws, azuredevops, oracle, mysql, sqlserver, git, terraform, postman, pytest, sonarqube, datadog]
 social:
   - { network: linkedin, url: "https://www.linkedin.com/in/dahurtadop/" }
@@ -18,16 +18,16 @@ social:
 * **LinkedIn:** https://www.linkedin.com/in/dahurtadop/
 
 ## PROFESSIONAL SUMMARY {#summary}
-Software Engineer with {{years}} years of experience across the full software development lifecycle, including 5 years of hands-on Python development (Flask) building and maintaining REST APIs and backend services. Strong background in database systems and SQL (PL/SQL, MySQL, SQL Server), testing at all levels (Pytest, Unittest, NUnit, MsTest), Git-based version control, and CI/CD pipelines (Azure DevOps). Practiced in Agile delivery (Scrum, Kanban), architecture and design-pattern-driven development, and applying AI to the SDLC through hands-on training in agentic tools and workflows. Proven ability to lead technical initiatives, mentor engineers, and review team output to raise code quality.
+Senior Software Engineer with {{years}} years of experience across the full software development lifecycle (SDLC), building backend services, REST APIs and database-driven systems with .NET (C#) and Python. Experienced with AWS cloud services, CI/CD pipelines in Azure DevOps, Infrastructure as Code (Terraform) and testing at every level (Pytest, Unittest, NUnit, MsTest). Hands-on with Generative AI for 3 years, now applying Claude Code in production projects for CI/CD, code review and coding standards. Practiced in Agile delivery (Scrum, Kanban) and design-pattern-driven architecture, with a proven ability to lead technical initiatives, mentor engineers and review team output to raise code quality.
 
 ## CORE COMPETENCIES {#skills}
-* **Backend development:** Python (Flask — REST API design and delivery), C# / .NET Core
+* **Backend development:** C# / .NET and .NET Core ({{years}} years); Python (5 years) — Flask, REST API design and delivery
 * **Databases & SQL:** PL/SQL (Oracle), MySQL, SQL Server
 * **Testing & Quality:** Pytest, Unittest, NUnit, MsTest, SonarQube — unit, integration and synthetic testing
 * **API & Integration:** REST, HTTP, JSON, OpenAPI/Swagger, Postman
-* **Cloud platforms:** AWS (Lambda, API Gateway, CloudWatch, S3, DynamoDB, SQS)
+* **Cloud platforms:** AWS — Lambda, API Gateway, EC2, S3, DynamoDB, SQS, CloudWatch, Route 53, ACM, IAM, KMS
 * **CI/CD & Version Control:** Azure DevOps pipelines, Git, Infrastructure as Code (Terraform)
-* **AI applied to SDLC:** Hands-on with agentic development tools and AI-assisted workflows (Anthropic Claude Code, Claude), Generative AI Center of Excellence participation
+* **Generative AI & AI-assisted SDLC:** 3 years hands-on — Claude Code in production projects for CI/CD, code review and coding standards; agentic development tools and AI-assisted workflows (Anthropic Claude Code, Claude); Generative AI Center of Excellence participation
 * **Methodologies:** Agile (Scrum, Kanban), Pair Programming, code review and mentoring
 * **Monitoring:** Datadog, Splunk, Coralogix
 
@@ -40,6 +40,7 @@ Software Engineer with {{years}} years of experience across the full software de
 * Implement Infrastructure as Code (Terraform) and manage CI/CD deployments through Azure Pipelines.
 * Champion Agile (Scrum/Kanban) practices to improve team delivery speed and quality.
 * Apply AI to the software development lifecycle through Generative AI Centers of Excellence and hands-on training in agentic development tools and AI-assisted workflows.
+* Apply Claude Code in production projects to CI/CD pipelines, code review and coding-style standards.
 
 **Software Engineer III** — ENCORA
 *11/2021 – 10/2023*

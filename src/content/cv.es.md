@@ -1,9 +1,9 @@
 ---
 lang: es
 title: "David Augusto Hurtado Pipicano"
-description: "Ingeniero de Software con {{years}} años de experiencia: Python, C#/.NET, SQL, CI/CD y desarrollo asistido por IA."
+description: "Ingeniero de Software Senior con {{years}} años de experiencia: .NET (C#), Python, AWS, CI/CD e IA Generativa."
 career_start: 2012-02
-headline: [Ingeniero de Software Senior, Desarrollador Python, Desarrollador C#]
+headline: [Ingeniero de Software Senior, Desarrollador .NET (C#), Desarrollador Python, Desarrollador AWS, Profesional en IA Generativa]
 tech: [python, flask, csharp, dotnet, aws, azuredevops, oracle, mysql, sqlserver, git, terraform, postman, pytest, sonarqube, datadog]
 social:
   - { network: linkedin, url: "https://www.linkedin.com/in/dahurtadop/" }
@@ -18,16 +18,16 @@ social:
 * **LinkedIn:** https://www.linkedin.com/in/dahurtadop/
 
 ## RESUMEN PROFESIONAL {#summary}
-Ingeniero de Software con {{years}} años de experiencia en todo el ciclo de vida del desarrollo de software, incluidos 5 años de desarrollo práctico en Python (Flask) construyendo y manteniendo APIs REST y servicios backend. Sólida trayectoria en bases de datos y SQL (PL/SQL, MySQL, SQL Server), pruebas en todos los niveles (Pytest, Unittest, NUnit, MsTest), control de versiones con Git y pipelines de CI/CD (Azure DevOps). Experiencia en entrega ágil (Scrum, Kanban), desarrollo guiado por arquitectura y patrones de diseño, y en la aplicación de IA al ciclo de desarrollo mediante formación práctica en herramientas y flujos de trabajo con agentes. Capacidad comprobada para liderar iniciativas técnicas, mentorizar ingenieros y revisar el trabajo del equipo para elevar la calidad del código.
+Ingeniero de Software Senior con {{years}} años de experiencia en todo el ciclo de vida del desarrollo de software (SDLC), construyendo servicios backend, APIs REST y sistemas basados en bases de datos con .NET (C#) y Python. Experiencia con servicios cloud de AWS, pipelines de CI/CD en Azure DevOps, Infraestructura como Código (Terraform) y pruebas en todos los niveles (Pytest, Unittest, NUnit, MsTest). Tres años de experiencia práctica con IA Generativa; actualmente aplico Claude Code en proyectos productivos para CI/CD, revisión de código y estándares de código. Experiencia en entrega ágil (Scrum, Kanban) y arquitectura guiada por patrones de diseño, con capacidad comprobada para liderar iniciativas técnicas, mentorizar ingenieros y revisar el trabajo del equipo para elevar la calidad del código.
 
 ## COMPETENCIAS CLAVE {#skills}
-* **Desarrollo backend:** Python (Flask — diseño y entrega de APIs REST), C# / .NET Core
+* **Desarrollo backend:** C# / .NET y .NET Core ({{years}} años); Python (5 años) — Flask, diseño y entrega de APIs REST
 * **Bases de datos y SQL:** PL/SQL (Oracle), MySQL, SQL Server
 * **Pruebas y calidad:** Pytest, Unittest, NUnit, MsTest, SonarQube — pruebas unitarias, de integración y sintéticas
 * **APIs e integración:** REST, HTTP, JSON, OpenAPI/Swagger, Postman
-* **Plataformas cloud:** AWS (Lambda, API Gateway, CloudWatch, S3, DynamoDB, SQS)
+* **Plataformas cloud:** AWS — Lambda, API Gateway, EC2, S3, DynamoDB, SQS, CloudWatch, Route 53, ACM, IAM, KMS
 * **CI/CD y control de versiones:** Pipelines de Azure DevOps, Git, Infraestructura como Código (Terraform)
-* **IA aplicada al SDLC:** Experiencia práctica con herramientas de desarrollo con agentes y flujos asistidos por IA (Anthropic Claude Code, Claude), participación en el Centro de Excelencia de IA Generativa
+* **IA Generativa y SDLC asistido por IA:** 3 años de experiencia práctica — Claude Code en proyectos productivos para CI/CD, revisión de código y estándares de código; herramientas de desarrollo con agentes y flujos asistidos por IA (Anthropic Claude Code, Claude); participación en el Centro de Excelencia de IA Generativa
 * **Metodologías:** Ágil (Scrum, Kanban), Pair Programming, revisión de código y mentoría
 * **Monitoreo:** Datadog, Splunk, Coralogix
 
@@ -40,6 +40,7 @@ Ingeniero de Software con {{years}} años de experiencia en todo el ciclo de vid
 * Implemento Infraestructura como Código (Terraform) y gestiono despliegues CI/CD con Azure Pipelines.
 * Impulso prácticas ágiles (Scrum/Kanban) para mejorar la velocidad y la calidad de entrega del equipo.
 * Aplico IA al ciclo de desarrollo de software a través de Centros de Excelencia de IA Generativa y formación práctica en herramientas de desarrollo con agentes y flujos asistidos por IA.
+* Aplico Claude Code en proyectos productivos para pipelines de CI/CD, revisión de código y estándares de estilo de código.
 
 **Ingeniero de Software III** — ENCORA
 *11/2021 – 10/2023*
