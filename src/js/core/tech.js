@@ -25,15 +25,6 @@ export const TECH = {
 
 export const TECH_SPRITE_PATH = 'vendor/devicon/tech.svg';
 
-// "Azure DevOps" or "C#" -> its slug, so free-text tags can show a logo.
-const BY_LABEL = Object.fromEntries(Object.entries(TECH).map(([slug, label]) => [label.toLowerCase(), slug]));
-
-/** First tag that has a logo, as an icon href (or ''). */
-export function logoForTags(tags) {
-  const slug = tags.map((t) => BY_LABEL[t.toLowerCase()]).find(Boolean);
-  return slug ? `${TECH_SPRITE_PATH}#tech-${slug}` : '';
-}
-
 const titleCase = (slug) => slug.replace(/[-_]+/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
 /** Unknown slugs still show as a text-only chip, so a typo never hides the strip. */

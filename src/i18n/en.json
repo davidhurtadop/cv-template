@@ -17,5 +17,7 @@
     "languages": "Languages"
   },
   "previousProject": "Previous project",
-  "nextProject": "Next project"
+  "nextProject": "Next project",
+  "pauseCarousel": "Pause automatic scrolling",
+  "playCarousel": "Resume automatic scrolling"
 }
