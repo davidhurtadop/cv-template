@@ -15,14 +15,16 @@ Each language has one file: `src/content/cv.<lang>.md`. All languages must use t
 | `photo` | no | Square profile photo, path relative to `src/` |
 | `tech` | no | List of technology slugs shown as a scrolling logo strip in the hero (`python`, `aws`, `dotnet`, ...; full list in `src/js/core/tech.js`). Unknown slugs show as text only |
 | `hide` | no | Contact keys (lowercase label, e.g. `phone`) hidden on web and PDF |
+| `logos` | no | Map of company name (exactly as written in experience/projects) to a logo image path, e.g. `MVM: img/companies/mvm.svg`. Companies without one get a lettered badge |
 | `social` | no | List of `{ network, url }`; `network` is a Bootstrap Icons brand name (`linkedin`, `github`, `twitter-x`, `instagram`, `youtube`, ...) |
 
 ## Body
 
 - `# NAME` then a bold line with roles.
-- Each section is `## TITLE {#id}`. Known ids: `contact`, `summary`, `skills`, `experience`, `education`, `certifications`, `languages`. Any other id becomes a generic text section.
+- Each section is `## TITLE {#id}`. Known ids: `contact`, `summary`, `skills`, `experience`, `projects` (optional), `education`, `certifications`, `languages`. Any other id becomes a generic text section.
 - `contact`, `skills`, `languages`: bullets of the form `* **Label:** value`. Every contact line is optional; for a public repo it is safest to leave out a phone number or address entirely instead of using `hide`.
 - `experience`: for each job, a bold line `**Role** — Company`, an italic period line `*MM/YYYY – Present*`, then bullets.
+- `projects`: same shape as `experience` (`**Project** — Company`, period), plus an optional one-line description and an optional `Tech: a, b, c` line (`Tecnologías:` also works). On the website each project is a compact card in an auto-advancing carousel: company logo, dates, name, description followed by the first bullet (up to 6 lines) and the first four technologies. The PDF lists name, dates, description and technologies.
 - `education`, `certifications`: plain bullets.
 
 ## Tokens

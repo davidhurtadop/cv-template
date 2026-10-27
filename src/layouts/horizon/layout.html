@@ -146,7 +146,46 @@
     </div>
   </section>
 
-  <section id="education" class="hz-section" data-if="education">
+  <section id="projects" class="hz-section" data-if="projects">
+    <div class="container">
+      <h2 class="hz-title" data-cv="t.projects"></h2>
+      <div class="cv-carousel" data-carousel>
+        <div class="cv-carousel-controls">
+          <button class="cv-carousel-btn cv-carousel-toggle" type="button" data-carousel-toggle aria-pressed="false"
+                  data-cv-attr="aria-label:ui.pauseCarousel;title:ui.pauseCarousel;data-label-pause:ui.pauseCarousel;data-label-play:ui.playCarousel">
+            <svg class="icon cv-icon-pause" aria-hidden="true"><use href="vendor/bootstrap-icons/icons.svg#bi-pause-fill"></use></svg>
+            <svg class="icon cv-icon-play" aria-hidden="true"><use href="vendor/bootstrap-icons/icons.svg#bi-play-fill"></use></svg>
+          </button>
+          <button class="cv-carousel-btn" type="button" data-carousel-prev data-cv-attr="aria-label:ui.previousProject;title:ui.previousProject">
+            <svg class="icon" aria-hidden="true"><use href="vendor/bootstrap-icons/icons.svg#bi-chevron-left"></use></svg>
+          </button>
+          <button class="cv-carousel-btn" type="button" data-carousel-next data-cv-attr="aria-label:ui.nextProject;title:ui.nextProject">
+            <svg class="icon" aria-hidden="true"><use href="vendor/bootstrap-icons/icons.svg#bi-chevron-right"></use></svg>
+          </button>
+        </div>
+        <ul class="cv-carousel-track" data-carousel-track tabindex="0" data-cv-attr="aria-label:t.projects">
+          <template data-repeat="projects">
+            <li class="cv-carousel-item">
+              <article class="cv-card">
+                <div class="cv-card-top">
+                  <img class="cv-card-logo" data-if="logo" data-cv-attr="src:logo;alt:company" loading="lazy">
+                  <span class="cv-card-monogram" data-if="initials" data-cv="initials" data-cv-attr="title:company" aria-hidden="true"></span>
+                  <span class="cv-card-period" data-cv="period"></span>
+                </div>
+                <h3 class="cv-card-title"><span data-cv="role"></span><span class="visually-hidden"> — <span data-cv="company"></span></span></h3>
+                <p class="cv-card-text" data-if="summaryHtml" data-cv-html="summaryHtml"></p>
+                <ul class="cv-card-tags" data-if="mainTags">
+                  <template data-repeat="mainTags"><li data-cv="label"></li></template>
+                </ul>
+              </article>
+            </li>
+          </template>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="hz-section hz-alt" data-if="education">
     <div class="container hz-narrow">
       <h2 class="hz-title" data-cv="t.education"></h2>
       <ul class="hz-list list-unstyled">
@@ -155,7 +194,7 @@
     </div>
   </section>
 
-  <section id="certifications" class="hz-section hz-alt" data-if="certifications">
+  <section id="certifications" class="hz-section" data-if="certifications">
     <div class="container">
       <h2 class="hz-title" data-cv="t.certifications"></h2>
       <ul class="row g-3 list-unstyled">
@@ -166,7 +205,7 @@
     </div>
   </section>
 
-  <section id="languages" class="hz-section" data-if="languages">
+  <section id="languages" class="hz-section hz-alt" data-if="languages">
     <div class="container hz-narrow">
       <h2 class="hz-title" data-cv="t.languages"></h2>
       <ul class="row g-3 list-unstyled">

@@ -40,6 +40,20 @@
     </template>
   </section>
 
+  <section data-if="projects">
+    <h2 data-cv="t.projects"></h2>
+    <template data-repeat="projects">
+      <div class="pr-project">
+        <div class="pr-entry-head">
+          <h3><span data-cv="role"></span> — <span data-cv="company"></span></h3>
+          <span class="pr-period" data-cv="period"></span>
+        </div>
+        <p data-if="description" data-cv-html="descriptionHtml"></p>
+        <p class="pr-tags" data-if="tagText" data-cv="tagText"></p>
+      </div>
+    </template>
+  </section>
+
   <section data-if="education">
     <h2 data-cv="t.education"></h2>
     <ul class="pr-plain"><template data-repeat="education"><li data-cv-html="html"></li></template></ul>

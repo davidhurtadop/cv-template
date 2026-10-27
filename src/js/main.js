@@ -8,14 +8,19 @@ import { initTyped } from './features/typed.js';
 import { initScrollSpy } from './features/scrollspy.js';
 import { addAlternateLinks, languageMenu, pickLanguage } from './features/language.js';
 import { initPrint } from './features/print.js';
+import { initCarousels } from './features/carousel.js';
 
 const params = new URLSearchParams(location.search);
 
+// Resolves once the stylesheet has loaded (or failed), so the layout is never shown unstyled.
 function addStylesheet(href) {
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = href;
-  document.head.append(link);
+  return new Promise((resolve) => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    link.onload = link.onerror = resolve;
+    document.head.append(link);
+  });
 }
 
 async function main() {
@@ -41,7 +46,7 @@ async function main() {
   document.documentElement.style.setProperty('--accent', config.accent);
   document.title = vm.title;
   document.querySelector('meta[name="description"]').content = vm.description;
-  addStylesheet(`${layoutPath}/layout.css`);
+  await addStylesheet(`${layoutPath}/layout.css`);
   addAlternateLinks(config, lang);
 
   const app = document.getElementById('app');
@@ -51,6 +56,9 @@ async function main() {
   initTheme(config.defaultTheme);
   initTyped(app);
   initScrollSpy('[data-spy-nav]');
+  initCarousels(app);
+  // The page is rendered after load, so the browser could not jump to #section links by itself.
+  if (location.hash.length > 1) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
   initPrint({ html: printHtml, vm, render, lang, layoutHref: 'layouts/print/print.css' });
 
   if (params.has('debug')) {

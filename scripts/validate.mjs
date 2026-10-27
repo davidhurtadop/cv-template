@@ -4,7 +4,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { dirname, extname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseCv } from '../src/js/core/parse-cv.js';
-import { KNOWN_SECTIONS, REQUIRED_META } from '../src/js/core/schema.js';
+import { KNOWN_SECTIONS, OPTIONAL_SECTIONS, REQUIRED_META } from '../src/js/core/schema.js';
 import { SOCIAL_NETWORKS } from '../src/js/core/icons.js';
 import { TECH } from '../src/js/core/tech.js';
 import { KNOWN_TOKENS, TOKEN, yearsSince } from '../src/js/core/placeholders.js';
@@ -62,7 +62,7 @@ function checkFile(file, base) {
   const ids = cv.sections.map((s) => s.id);
   const dup = ids.find((id, i) => ids.indexOf(id) !== i);
   if (dup) fail(where, `duplicate section id "${dup}"`);
-  for (const id of KNOWN_SECTIONS) if (!ids.includes(id)) warn(where, `no "${id}" section`);
+  for (const id of KNOWN_SECTIONS) if (!ids.includes(id) && !OPTIONAL_SECTIONS.includes(id)) warn(where, `no "${id}" section`);
 
   const contactKeys = (cv.sections.find((s) => s.id === 'contact')?.pairs ?? []).map((p) => p.key);
   for (const key of cv.meta.hide ?? []) {
@@ -74,6 +74,9 @@ function checkFile(file, base) {
   }
   for (const slug of cv.meta.tech ?? []) {
     if (!(slug in TECH)) warn(where, `unknown tech "${slug}" (shown as text only, no logo)`);
+  }
+  for (const [company, path] of Object.entries(cv.meta.logos ?? {})) {
+    if (!existsSync(join(base, path))) fail(where, `logo for "${company}" not found: ${path}`);
   }
   checkImage(where, base, 'hero_image', cv.meta.hero_image, (d) => d.width >= 1600 && Math.abs(d.width / d.height - 16 / 9) < 0.1);
   checkImage(where, base, 'photo', cv.meta.photo, (d) => d.width === d.height && d.width >= 400);
@@ -104,7 +107,7 @@ function checkSet(label, dir, languages, base) {
   return parsed;
 }
 
-const SHARED_META = ['career_start', 'tech', 'social', 'hide', 'hero_image', 'photo'];
+const SHARED_META = ['career_start', 'tech', 'social', 'hide', 'hero_image', 'photo', 'logos'];
 
 // Every key of the reference labels file (nested keys as a.b), so translations can't miss one.
 function flatKeys(obj, prefix = '') {

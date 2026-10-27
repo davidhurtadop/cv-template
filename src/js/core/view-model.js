@@ -3,6 +3,12 @@ import { KNOWN_SECTIONS } from './schema.js';
 import { contactIcon, iconHref, networkIcon } from './icons.js';
 import { techEntry } from './tech.js';
 
+// "OPTIMA CONSULTING" -> "OC", "ENCORA" -> "EN".
+const initialsOf = (company = '') => {
+  const words = company.split(/[\s/]+/).filter((w) => /\p{L}/u.test(w));
+  return (words.length > 1 ? words[0][0] + words[1][0] : (words[0] ?? '').slice(0, 2)).toUpperCase();
+};
+
 const inline = (md) => marked.parseInline(md ?? '');
 const block = (md) => marked.parse(md ?? '');
 
@@ -24,6 +30,19 @@ export function buildViewModel(cv, ui = {}) {
     href: contactHref(p.key, p.value),
     plain: contactHref(p.key, p.value) ? '' : inline(p.value),
     icon: contactIcon(p.key) ? iconHref(contactIcon(p.key)) : '',
+  }));
+  const entries = (id) => (sectionOf(id)?.entries ?? []).map((e) => ({
+    ...e,
+    descriptionHtml: inline(e.description),
+    bullets: e.bullets.map((md) => ({ html: inline(md) })),
+    tags: e.tags.map((label) => ({ label })),
+    tagText: e.tags.join(', '),
+    mainTags: e.tags.slice(0, 4).map((label) => ({ label })),
+    // Card text: the description followed by the first key result, for a bit more detail.
+    summaryHtml: inline([e.description, e.bullets[0]].filter(Boolean).join(' ')),
+    // Company logo from front matter `logos:` (keyed by the company text); otherwise a monogram.
+    logo: cv.meta.logos?.[e.company] ?? '',
+    initials: cv.meta.logos?.[e.company] ? '' : initialsOf(e.company),
   }));
   const items = (id) => (sectionOf(id)?.items ?? []).map((md) => ({ html: inline(md) }));
 
@@ -60,10 +79,8 @@ export function buildViewModel(cv, ui = {}) {
     summary: sectionOf('summary') ? block(sectionOf('summary').text) : '',
     skills: pairs('skills'),
     languages: pairs('languages'),
-    experience: (sectionOf('experience')?.entries ?? []).map((e) => ({
-      ...e,
-      bullets: e.bullets.map((md) => ({ html: inline(md) })),
-    })),
+    experience: entries('experience'),
+    projects: entries('projects'),
     education: items('education'),
     certifications: items('certifications'),
     extra: cv.sections
