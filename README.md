@@ -35,7 +35,7 @@ The **Download PDF** button (and Ctrl/Cmd+P) prints an A4 version of the CV buil
 
 ## Using Claude to edit your CV
 
-In Claude Code, run `/cv-setup`: it guides you step by step the first time, and afterwards asks what you want to change (add a job, translate, import a CV, validate, publish). The skills live in `.claude/skills/`. [docs/claude-prompts.md](docs/claude-prompts.md) has the same jobs as copy-paste prompts for the usual jobs: setting up from scratch, converting a CV from PDF/Word/LinkedIn into the markdown format, translating to another language, updating one entry, hiding details and publishing.
+In Claude Code, run `/cv-setup`: it guides you step by step the first time, and afterwards asks what you want to change (add a job, translate, import a CV, validate, publish). To adapt your CV to a job offer, run `/cv-tailor` with the job description: it asks about anything the job needs that your CV doesn't show, never invents experience, and saves a separate markdown file in `tailored/` (kept off GitHub) without touching the website. The skills live in `.claude/skills/`. [docs/claude-prompts.md](docs/claude-prompts.md) has the same jobs as copy-paste prompts for the usual jobs: setting up from scratch, converting a CV from PDF/Word/LinkedIn into the markdown format, translating to another language, updating one entry, hiding details and publishing.
 
 ## Where things are
 

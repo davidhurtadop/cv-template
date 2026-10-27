@@ -19,7 +19,7 @@ Path-scoped rules load automatically when you touch matching files: `.claude/rul
 
 - `npm start`: preview `src/` at http://localhost:3000 with the zero-dependency `scripts/serve.mjs`. The page fetches its content, so opening `index.html` as a file does not work.
 - `npm test`: parser unit tests (`node --test`).
-- `npm run validate`: checks `src/content` and every folder in `tests/fixtures/` (sample CVs that double as schema examples): front matter, section ids, language parity, social and tech names, images. Exits non-zero on errors.
+- `npm run validate`: checks `src/content` and every folder in `tests/fixtures/` (sample CVs that double as schema examples): front matter, section ids, language parity, social and tech names, images. Exits non-zero on errors. `node scripts/validate.mjs <file.md>` checks single CV files, such as tailored ones.
 - URL flags for previews: `?lang=es`, `?theme=dark|light`, `?layout=horizon|ledger`, `?debug=1` (missing, extra and unresolved sections).
 
 ## Architecture
@@ -44,4 +44,4 @@ Path-scoped rules load automatically when you touch matching files: `.claude/rul
 - `settings.json` (committed): allows the npm and read-only git commands, asks before `git push` and before editing `src/vendor/`. Personal overrides go in `settings.local.json`, personal notes in `CLAUDE.local.md` (both gitignored).
 - `rules/`: the path-scoped rules above, plus `skills.md` (how skills ask the user: multiple-choice questions, one at a time, confirmation before anything outward-facing).
 - `agents/cv-reviewer.md`: read-only reviewer for CV wording and ATS readability.
-- `skills/`: `cv-setup` is the entry point; it compares `owner.github` in `site.json` with the git remote owner to choose first-time mode (guided interview, replaces the previous owner's content after confirmation) or maintenance mode (routes to the others). `cv-update` (routine edits), `cv-translate`, `cv-import` (other formats to the schema), `cv-validate` (run after every content change) and `cv-pr` (opens a pull request for review; merging it into `main` deploys the site; user-invoked only). Copy-paste versions for other tools are in [docs/claude-prompts.md](docs/claude-prompts.md).
+- `skills/`: `cv-setup` is the entry point; it compares `owner.github` in `site.json` with the git remote owner to choose first-time mode (guided interview, replaces the previous owner's content after confirmation) or maintenance mode (routes to the others). `cv-update` (routine edits), `cv-translate`, `cv-import` (other formats to the schema), `cv-validate` (run after every content change), `cv-tailor` (writes a job-specific CV to the gitignored `tailored/` folder from a job description, never invents experience, never touches `src/`) and `cv-pr` (opens a pull request for review; merging it into `main` deploys the site; user-invoked only). Copy-paste versions for other tools are in [docs/claude-prompts.md](docs/claude-prompts.md).

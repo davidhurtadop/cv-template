@@ -1,4 +1,5 @@
 // Validates CV content without any dependency: node scripts/validate.mjs
+// With file arguments (node scripts/validate.mjs tailored/cv.acme.en.md) it checks only those CV files.
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { dirname, extname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -114,6 +115,24 @@ function flatKeys(obj, prefix = '') {
 
 const attr = (html, selector) => html.match(selector)?.[1]?.replace(/&amp;/g, '&');
 
+function report() {
+  for (const w of warnings) console.warn(`warning  ${w}`);
+  for (const e of errors) console.error(`error    ${e}`);
+  console.log(`\n${errors.length} error(s), ${warnings.length} warning(s)`);
+  process.exit(errors.length ? 1 : 0);
+}
+
+// 0. Single files (for example a tailored CV outside src/content): schema checks only.
+const files = process.argv.slice(2);
+if (files.length) {
+  for (const file of files) {
+    const path = resolve(file);
+    if (!existsSync(path)) { fail(file, 'file not found'); continue; }
+    checkFile(path, src);
+  }
+  report();
+}
+
 // 1. The live site, driven by config/site.json
 const config = JSON.parse(readFileSync(join(src, 'config/site.json'), 'utf8'));
 if (!config.languages.includes(config.defaultLang)) fail('config/site.json', 'defaultLang must be in languages');
@@ -170,7 +189,4 @@ for (const name of readdirSync(fixtures)) {
   checkSet(`tests/fixtures/${name}`, dir, langs, src);
 }
 
-for (const w of warnings) console.warn(`warning  ${w}`);
-for (const e of errors) console.error(`error    ${e}`);
-console.log(`\n${errors.length} error(s), ${warnings.length} warning(s)`);
-process.exit(errors.length ? 1 : 0);
+report();
