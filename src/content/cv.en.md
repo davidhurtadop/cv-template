@@ -13,6 +13,7 @@ logos:
   AXEDE: img/companies/axede.svg
   ARQUITECSOFT: img/companies/arquitecsoft.png
   OPEN SYSTEMS INTERNATIONAL: img/companies/openintl.png
+photo: img/profile.jpg
 social:
   - { network: linkedin, url: "https://www.linkedin.com/in/dahurtadop/" }
   - { network: github, url: "https://github.com/davidhurtadop" }
