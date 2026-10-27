@@ -87,6 +87,7 @@ Lidero la evolución, estabilidad y estrategia técnica de la Customer API de un
 * Gobierno la especificación OpenAPI, manteniendo cambios de contrato compatibles hacia atrás.
 * Diseñé monitoreo sintético con Datadog y logging estructurado para alertas proactivas en producción.
 * Refactorizo la infraestructura AWS con Terraform y estandarizo los pipelines de despliegue en Azure DevOps.
+Destacado: Responsable técnico | Confiabilidad en producción
 Tecnologías: Python, Flask, Serverless, Terraform, AWS, Azure DevOps, Datadog, Splunk
 
 **Modernización de tarifas (Rating Modernization)** — ENCORA / COFORGE
@@ -95,6 +96,7 @@ Lideré la adaptación de la Customer API durante una migración a AWS de toda l
 * Entregué la migración a producción con mínimo impacto para el cliente.
 * Refactoricé la infraestructura AWS con Terraform y simplifiqué el CI/CD, reduciendo el tiempo de despliegue.
 * Creé consultas de logs en CloudWatch para depurar en varios entornos y migré las herramientas de Python a uv.
+Destacado: Migración a AWS | Mínimo impacto
 Tecnologías: Python, Flask, Serverless, Terraform, AWS, CloudWatch, Azure DevOps, Datadog
 
 **Partner-Connect API** — ENCORA / COFORGE
@@ -103,6 +105,7 @@ Diseñé la infraestructura AWS base para integraciones de socios seguras y esca
 * Implementé Infraestructura como Código con Terraform alineada con estándares de seguridad y escalabilidad.
 * Establecí patrones de infraestructura reutilizables que aceleraron la incorporación de nuevos socios.
 * Integré la infraestructura con el código de la aplicación mediante pipelines de CI/CD.
+Destacado: IaC reutilizable | Socios integrados más rápido
 Tecnologías: Terraform, AWS, Azure DevOps, Git
 
 **Refactorización de la especificación OpenAPI de Customer** — ENCORA / COFORGE
@@ -111,6 +114,7 @@ Lideré una refactorización estructural del repositorio de la especificación d
 * Rediseñé los módulos de la API para eliminar definiciones duplicadas.
 * Automaticé la publicación en SwaggerHub y refactoricé los pipelines de despliegue en Azure DevOps.
 * Acorté los ciclos de publicación de la documentación y mejoré la consistencia de los contratos.
+Destacado: Sin duplicación | Documentación más ágil
 Tecnologías: OpenAPI, YAML, SwaggerHub, Azure DevOps, Git
 
 **Logging API v3 y v4** — ENCORA / COFORGE
@@ -119,6 +123,7 @@ Integré dos nuevas versiones de una API de registro de solicitudes para mejorar
 * Implementé la lógica de negocio de las nuevas versiones y amplié la infraestructura AWS.
 * Creé alertas y dashboards en Splunk, reduciendo el tiempo de detección de incidentes.
 * Habilité un despliegue seguro con ajustes de CI/CD y documentación OpenAPI.
+Destacado: Despliegue seguro | Detección más rápida
 Tecnologías: Python, Flask, Terraform, AWS, Azure DevOps, Datadog, Splunk
 
 **Refactorización de infraestructura de Customer API** — ENCORA
@@ -127,6 +132,7 @@ Lideré una refactorización completa de infraestructura y entrega alineada con 
 * Rediseñé la infraestructura AWS con Terraform y Serverless, liberada con mínimo impacto para el cliente.
 * Agregué alertas en Datadog y envié logs estructurados a Splunk.
 * Optimicé los pipelines de Azure DevOps, eliminando aprobaciones manuales y pasos de despliegue.
+Destacado: Serverless + Terraform | Menos pasos manuales
 Tecnologías: Python, Flask, Serverless, Terraform, AWS, Azure DevOps, Datadog, Splunk, UltraDNS
 
 **Refactorización de la API de integración TMS** — ENCORA
@@ -135,6 +141,7 @@ Reestructuré la infraestructura y el CI/CD de una API de integración de gesti�
 * Reconstruí la infraestructura AWS con Terraform y servicios en contenedores (Docker, EKS).
 * Agregué especificaciones OpenAPI, alertas en Datadog y logging centralizado en Splunk.
 * Estandaricé patrones de infraestructura para servicios basados en contenedores.
+Destacado: Docker + EKS | CI/CD estándar
 Tecnologías: C#, .NET, Terraform, AWS, EKS, Docker, Azure DevOps, Datadog, Splunk
 
 **API de tarifas por defecto (Rate Default API)** — ENCORA
@@ -143,6 +150,7 @@ Diseñé y construí desde cero una API de respaldo que mantiene la operación c
 * Construí la infraestructura AWS (EKS, API Gateway, IAM, ACM, Route 53, DynamoDB) y sus pipelines de CI/CD.
 * Diseñé procesos automatizados de migración de datos.
 * Configuré la observabilidad con Datadog y Splunk, aumentando la disponibilidad durante caídas.
+Destacado: Construida desde cero | Respaldo ante caídas
 Tecnologías: C#, .NET, Terraform, AWS, DynamoDB, MySQL, Docker, Kubernetes, Azure DevOps
 
 **API de servicios de integración TMS** — ENCORA
@@ -151,6 +159,7 @@ Agregué mensajería orientada a eventos y mejoré la observabilidad de una API 
 * Implementé colas SQS con Terraform y programación con EventBridge para la comunicación orientada a eventos.
 * Agregué especificaciones OpenAPI, monitoreo sintético en Datadog y dashboards en Splunk.
 * Mejoré los pipelines de Azure DevOps y la estructura del repositorio.
+Destacado: Orientada a eventos | SQS + EventBridge
 Tecnologías: Python, Terraform, AWS, SQS, EventBridge, Azure DevOps, Datadog, Splunk
 
 **Observabilidad de Customer API** — ENCORA
@@ -159,6 +168,7 @@ Mejoré el monitoreo, la gobernanza y el CI/CD de la Customer API.
 * Agregué especificaciones OpenAPI.
 * Implementé pruebas sintéticas y alertas en Datadog, y dashboards en Splunk.
 * Optimicé los pipelines de Azure DevOps para despliegues más consistentes.
+Destacado: Pruebas sintéticas | Dashboards en Splunk
 Tecnologías: Python, Terraform, AWS, Azure DevOps, Datadog, Splunk
 
 **API de registro de solicitudes** — ENCORA
@@ -167,6 +177,7 @@ Diseñé e implementé una nueva integración de API para registrar datos de sol
 * Implementé la lógica de negocio en Python y Flask.
 * Construí la infraestructura AWS con Terraform y los pipelines de CI/CD.
 * Definí especificaciones OpenAPI, alertas en Datadog y dashboards en Splunk.
+Destacado: Nueva integración | Python + Flask
 Tecnologías: Python, Flask, Terraform, AWS, Azure DevOps, Datadog, Splunk
 
 **Actualización a OSF 8** — MVM
@@ -175,6 +186,7 @@ Lideré la evaluación y configuración durante la actualización de una platafo
 * Realicé análisis de brechas entre versiones para evaluar el impacto técnico y funcional.
 * Detecté y documenté defectos temprano, antes del despliegue completo en producción.
 * Prioricé correcciones con el equipo en Scrum.
+Destacado: Análisis de brechas | Defectos detectados a tiempo
 Tecnologías: PL/SQL, SQL*Plus, OSF, Git, Scrum
 
 **Estabilización de plataforma comercial** — MVM
@@ -183,6 +195,7 @@ Soporte de producción de alta prioridad para la plataforma comercial de una emp
 * Corregí las causas raíz de incidentes recurrentes en lugar de aplicar parches temporales.
 * Construí scripts validados para corregir inconsistencias de datos en producción.
 * Desarrollé reportes a la medida de las necesidades de información del cliente.
+Destacado: Correcciones de raíz | Integridad de datos
 Tecnologías: C#, PL/SQL, Oracle, Azure DevOps, Git, Remedy
 
 **Cambios regulatorios de facturación por COVID-19** — MVM
@@ -191,6 +204,7 @@ Implementé reglas de facturación, subsidios y reconexión de servicios exigida
 * Traduje los requisitos regulatorios en historias de usuario y entregué bajo plazos urgentes.
 * Ayudé a garantizar la continuidad de servicios públicos esenciales para miles de usuarios en Colombia.
 * Gestioné pull requests, pipelines de CI/CD y validación de calidad de código con SonarQube.
+Destacado: Plazo regulatorio | Servicios esenciales
 Tecnologías: C#, PL/SQL, OSF, Azure DevOps, SonarQube, Git
 
 **Integración OSF – Oracle TOA** — AXEDE
@@ -199,6 +213,7 @@ Diseñé una integración por servicios web entre OSF y Oracle TOA para automati
 * Diseñé y desarrollé la lógica central de la integración en procedimientos almacenados PL/SQL.
 * Entregué dentro del tiempo estimado y la acompañé hasta su estabilidad en producción.
 * Reduje la intervención manual en el procesamiento de órdenes de trabajo.
+Destacado: Órdenes automatizadas | Entregada a tiempo
 Tecnologías: PL/SQL, Oracle TOA, OSF
 
 **Soporte de producción y requerimientos** — AXEDE
@@ -207,6 +222,7 @@ Estabilización y mejora continua de los sistemas comerciales de clientes.
 * Lideré al equipo para cumplir los objetivos de nivel de servicio.
 * Reduje un gran backlog de incidentes críticos.
 * Realicé análisis de causa raíz para evitar incidentes recurrentes.
+Destacado: SLO cumplidos | Backlog reducido
 Tecnologías: PL/SQL, Oracle, C#, OSF
 
 **Servicios de outsourcing – coordinación de equipo** — OPTIMA CONSULTING
@@ -215,6 +231,7 @@ Coordiné un equipo de soporte y desarrollo que mantenía los sistemas comercial
 * Seguí y reporté los KPI del servicio para asegurar el cumplimiento de los SLA.
 * Capacité y mentoricé a los miembros del equipo.
 * Fui el punto de contacto principal entre los clientes y el equipo técnico.
+Destacado: Líder de equipo | Cumplimiento de SLA
 Tecnologías: PMI, MS Project
 
 **Actualización de plataforma comercial** — OPTIMA CONSULTING
@@ -223,6 +240,7 @@ Actualicé una plataforma comercial crítica para el negocio a su última versi�
 * Analicé las diferencias funcionales y de arquitectura entre versiones en los distintos módulos.
 * Apoyé la migración y validación de datos.
 * Capacité a los usuarios del cliente en las nuevas funcionalidades.
+Destacado: Nueva versión | Capacitación a usuarios
 Tecnologías: PL/SQL, Oracle, C#, Oracle Forms, OSF
 
 **Reportes de alto volumen** — OPTIMA CONSULTING
@@ -231,6 +249,7 @@ Soporte y mejoras para los sistemas comerciales de clientes.
 * Diseñé procesos de reportes de alto rendimiento para grandes volúmenes de datos.
 * Ayudé a los clientes a cumplir requisitos de reportes regulatorios, reduciendo el riesgo de multas.
 * Entregué correcciones y nuevos requerimientos según la prioridad del negocio.
+Destacado: Grandes volúmenes | Reportes regulatorios
 Tecnologías: PL/SQL, Oracle, C#, Crystal Reports, OSF
 
 **Optimización de proceso batch** — ARQUITECSOFT
@@ -239,6 +258,7 @@ Optimización del rendimiento de un proceso batch masivo en un entorno de factur
 * Reduje el tiempo de ejecución en un 95%.
 * Analicé planes de ejecución y trazas TKPROF y rediseñé consultas SQL críticas.
 * Implementé ejecución en paralelo con Pro*C.
+Destacado: 95% más rápido | Paralelismo con Pro*C
 Tecnologías: PL/SQL, Pro*C, OSF
 
 **Estabilización de proceso de financiación** — ARQUITECSOFT
@@ -247,6 +267,7 @@ Estabilicé el proceso de financiación al consumidor de un cliente.
 * Resolví defectos funcionales recurrentes.
 * Diseñé y ejecuté planes de pruebas funcionales y de regresión.
 * Monitoreé la estabilidad en producción después de cada liberación.
+Destacado: Defectos resueltos | Liberación estable
 Tecnologías: C#, WinForms, PL/SQL, Oracle, OSF
 
 **Release de Open Smartflex 7.08** — OPEN SYSTEMS INTERNATIONAL
@@ -255,6 +276,7 @@ Desarrollo y estabilización del módulo de facturación en una plataforma de pr
 * Diseñé e implementé componentes clave del proceso de reliquidación (regeneración de cargos y facturas).
 * Desarrollé mejoras de facturación y pruebas de punta a punta de los flujos de facturación.
 * Resolví incidencias de producción que afectaban la exactitud de la facturación.
+Destacado: Reliquidación | Exactitud de facturación
 Tecnologías: C#, PL/SQL, OSF
 
 **Release de Open Smartflex 7.07** — OPEN SYSTEMS INTERNATIONAL
@@ -263,6 +285,7 @@ Desarrollo y estabilización del módulo de facturación.
 * Diseñé y desarrollé procesos de reportes de auditoría para cargos, facturas, pagos, recaudos y financiación.
 * Implementé cambios del proceso de facturación en C# y PL/SQL.
 * Validé los flujos de facturación, pagos, recaudo y financiación.
+Destacado: Reportes de auditoría | Integridad de facturación
 Tecnologías: C#, PL/SQL, OSF
 
 ## EDUCACIÓN {#education}

@@ -87,6 +87,7 @@ Lead the evolution, stability and technical strategy of a U.S. logistics client'
 * Govern the OpenAPI specification, keeping contract changes backward compatible.
 * Designed Datadog synthetic monitoring and structured logging for proactive production alerting.
 * Refactor AWS infrastructure with Terraform and standardize Azure DevOps deployment pipelines.
+Highlight: Technical owner | Production reliability
 Tech: Python, Flask, Serverless, Terraform, AWS, Azure DevOps, Datadog, Splunk
 
 **Rating Modernization** — ENCORA / COFORGE
@@ -95,6 +96,7 @@ Led the Customer API adaptation during an organization-wide AWS migration and se
 * Delivered the production migration with minimal client-side disruption.
 * Refactored AWS infrastructure with Terraform and simplified CI/CD, reducing deployment time.
 * Built CloudWatch log queries for multi-environment debugging and moved Python tooling to uv.
+Highlight: AWS migration | Minimal disruption
 Tech: Python, Flask, Serverless, Terraform, AWS, CloudWatch, Azure DevOps, Datadog
 
 **Partner-Connect API** — ENCORA / COFORGE
@@ -103,6 +105,7 @@ Designed the foundational AWS infrastructure for secure, scalable partner integr
 * Implemented Infrastructure as Code with Terraform aligned with security and scalability standards.
 * Established reusable infrastructure patterns that accelerated onboarding of new partners.
 * Integrated infrastructure with application code through CI/CD pipelines.
+Highlight: Reusable IaC | Faster partner onboarding
 Tech: Terraform, AWS, Azure DevOps, Git
 
 **Customer OpenAPI Specification Refactor** — ENCORA / COFORGE
@@ -111,6 +114,7 @@ Led a structural refactor of the Customer API specification repository.
 * Redesigned the API modules to remove duplicated definitions.
 * Automated SwaggerHub publishing and refactored the Azure DevOps deployment pipelines.
 * Shortened documentation release cycles and improved API contract consistency.
+Highlight: No duplication | Faster docs
 Tech: OpenAPI, YAML, SwaggerHub, Azure DevOps, Git
 
 **Logging API v3 and v4** — ENCORA / COFORGE
@@ -119,6 +123,7 @@ Integrated two new versions of a request-logging API to improve monitoring and r
 * Implemented the business logic for the new versions and extended the AWS infrastructure.
 * Created Splunk alerts and dashboards, reducing incident detection time.
 * Enabled a safe rollout with CI/CD updates and OpenAPI documentation.
+Highlight: Safe rollout | Faster detection
 Tech: Python, Flask, Terraform, AWS, Azure DevOps, Datadog, Splunk
 
 **Customer API Infrastructure Refactor** — ENCORA
@@ -127,6 +132,7 @@ Led a full infrastructure and delivery refactor aligned with the client's automa
 * Re-architected AWS infrastructure with Terraform and Serverless, released with minimal client impact.
 * Added Datadog alerting and forwarded structured logs to Splunk.
 * Optimized Azure DevOps pipelines, removing manual approvals and deployment steps.
+Highlight: Serverless + Terraform | Fewer manual steps
 Tech: Python, Flask, Serverless, Terraform, AWS, Azure DevOps, Datadog, Splunk, UltraDNS
 
 **TMS Integration API Refactor** — ENCORA
@@ -135,6 +141,7 @@ Restructured the infrastructure and CI/CD of a transportation management (TMS) i
 * Rebuilt AWS infrastructure with Terraform and containerized services (Docker, EKS).
 * Added OpenAPI specifications, Datadog alerting and centralized Splunk logging.
 * Standardized infrastructure patterns for container-based services.
+Highlight: Docker + EKS | Standard CI/CD
 Tech: C#, .NET, Terraform, AWS, EKS, Docker, Azure DevOps, Datadog, Splunk
 
 **Rate Default API** — ENCORA
@@ -143,6 +150,7 @@ Designed and built, from scratch, a fallback API that keeps the business running
 * Built the AWS infrastructure (EKS, API Gateway, IAM, ACM, Route 53, DynamoDB) and its CI/CD pipelines.
 * Designed automated data migration processes.
 * Configured Datadog and Splunk observability, increasing availability during outages.
+Highlight: Built from scratch | Outage fallback
 Tech: C#, .NET, Terraform, AWS, DynamoDB, MySQL, Docker, Kubernetes, Azure DevOps
 
 **TMS Integration Services API** — ENCORA
@@ -151,6 +159,7 @@ Added event-driven messaging and improved observability for a TMS integration AP
 * Implemented SQS queues with Terraform and EventBridge scheduling for event-driven communication.
 * Added OpenAPI specifications, Datadog synthetic monitoring and Splunk dashboards.
 * Improved Azure DevOps pipelines and the repository structure.
+Highlight: Event-driven | SQS + EventBridge
 Tech: Python, Terraform, AWS, SQS, EventBridge, Azure DevOps, Datadog, Splunk
 
 **Customer API Observability** — ENCORA
@@ -159,6 +168,7 @@ Improved monitoring, governance and CI/CD for the Customer API.
 * Added OpenAPI specifications.
 * Implemented Datadog synthetic tests and alerting, and Splunk dashboards.
 * Optimized Azure DevOps pipelines for more consistent deployments.
+Highlight: Synthetic tests | Splunk dashboards
 Tech: Python, Terraform, AWS, Azure DevOps, Datadog, Splunk
 
 **Request Logging API** — ENCORA
@@ -167,6 +177,7 @@ Designed and implemented a new API integration for logging request data and moni
 * Implemented the business logic in Python and Flask.
 * Built the AWS infrastructure with Terraform and the CI/CD pipelines.
 * Defined OpenAPI specifications, Datadog alerts and Splunk dashboards.
+Highlight: New integration | Python + Flask
 Tech: Python, Flask, Terraform, AWS, Azure DevOps, Datadog, Splunk
 
 **OSF 8 Upgrade** — MVM
@@ -175,6 +186,7 @@ Led evaluation and configuration during the upgrade of a utilities billing platf
 * Performed gap analysis between versions to assess technical and functional impact.
 * Detected and documented defects early, before full production rollout.
 * Prioritized fixes with the team in Scrum.
+Highlight: Gap analysis | Early defect detection
 Tech: PL/SQL, SQL*Plus, OSF, Git, Scrum
 
 **Commercial Platform Stabilization** — MVM
@@ -183,6 +195,7 @@ High-priority production support for a utility's commercial platform.
 * Fixed root causes of recurring incidents instead of temporary patches.
 * Built validated scripts to correct data inconsistencies in production.
 * Developed custom reports for the client's information needs.
+Highlight: Root-cause fixes | Data integrity
 Tech: C#, PL/SQL, Oracle, Azure DevOps, Git, Remedy
 
 **COVID-19 Regulatory Billing Changes** — MVM
@@ -191,6 +204,7 @@ Implemented billing, subsidy and service-reconnection rules required by a govern
 * Translated regulatory requirements into user stories and delivered under urgent deadlines.
 * Helped ensure continuity of essential public services for thousands of users in Colombia.
 * Managed pull requests, CI/CD pipelines and code quality validation with SonarQube.
+Highlight: Regulatory deadline | Essential services
 Tech: C#, PL/SQL, OSF, Azure DevOps, SonarQube, Git
 
 **OSF – Oracle TOA Integration** — AXEDE
@@ -199,6 +213,7 @@ Designed a web service integration between OSF and Oracle TOA to automate work o
 * Designed and developed the core integration logic in PL/SQL stored procedures.
 * Delivered within the estimated timeline and supported it until stable in production.
 * Reduced manual intervention in work order processing.
+Highlight: Automated work orders | Delivered on time
 Tech: PL/SQL, Oracle TOA, OSF
 
 **Production Support and Requirements** — AXEDE
@@ -207,6 +222,7 @@ Stabilization and continuous improvement of client commercial systems.
 * Led the team to meet service-level objectives.
 * Reduced a large backlog of critical incidents.
 * Performed root-cause analysis to prevent recurring issues.
+Highlight: SLOs met | Backlog reduced
 Tech: PL/SQL, Oracle, C#, OSF
 
 **Outsourcing Services – Team Coordination** — OPTIMA CONSULTING
@@ -215,6 +231,7 @@ Coordinated a support and development team maintaining client commercial systems
 * Tracked and reported service KPIs to ensure SLA compliance.
 * Trained and mentored team members.
 * Acted as the main point of contact between customers and the technical team.
+Highlight: Team lead | SLA compliance
 Tech: PMI, MS Project
 
 **Commercial Platform Upgrade** — OPTIMA CONSULTING
@@ -223,6 +240,7 @@ Upgraded a business-critical commercial platform to its latest version.
 * Analyzed functional and architectural differences between versions across modules.
 * Supported data migration and validation.
 * Trained client stakeholders on the new capabilities.
+Highlight: Version upgrade | Stakeholder training
 Tech: PL/SQL, Oracle, C#, Oracle Forms, OSF
 
 **High-Volume Reporting** — OPTIMA CONSULTING
@@ -231,6 +249,7 @@ Support and enhancements for client commercial systems.
 * Designed high-performance reporting processes for large data volumes.
 * Helped clients meet regulatory reporting requirements, reducing the risk of fines.
 * Delivered fixes and new requirements by business priority.
+Highlight: Large data volumes | Regulatory reports
 Tech: PL/SQL, Oracle, C#, Crystal Reports, OSF
 
 **Batch Process Tuning** — ARQUITECSOFT
@@ -239,6 +258,7 @@ Performance optimization of a large-scale batch process in a high-volume billing
 * Reduced execution time by 95%.
 * Analyzed execution plans and TKPROF traces and redesigned critical SQL queries.
 * Implemented parallel execution with Pro*C.
+Highlight: 95% faster | Pro*C parallelism
 Tech: PL/SQL, Pro*C, OSF
 
 **Financing Process Stabilization** — ARQUITECSOFT
@@ -247,6 +267,7 @@ Stabilized a client's consumer-financing process.
 * Resolved recurring functional defects.
 * Designed and ran functional and regression test plans.
 * Monitored production stability after release.
+Highlight: Recurring defects fixed | Stable release
 Tech: C#, WinForms, PL/SQL, Oracle, OSF
 
 **Open Smartflex 7.08 Release** — OPEN SYSTEMS INTERNATIONAL
@@ -255,6 +276,7 @@ Development and stabilization of the billing module in a high-volume financial p
 * Designed and implemented key components of the reliquidation process (regenerating charges and invoices).
 * Developed billing enhancements and end-to-end testing of billing workflows.
 * Resolved production issues affecting billing accuracy.
+Highlight: Reliquidation | Billing accuracy
 Tech: C#, PL/SQL, OSF
 
 **Open Smartflex 7.07 Release** — OPEN SYSTEMS INTERNATIONAL
@@ -263,6 +285,7 @@ Development and stabilization of the billing module.
 * Designed and developed audit reporting processes for charges, invoices, payments, collections and financing.
 * Implemented billing process changes in C# and PL/SQL.
 * Validated billing, payment, collection and financing flows.
+Highlight: Audit reports | Billing integrity
 Tech: C#, PL/SQL, OSF
 
 ## EDUCATION {#education}

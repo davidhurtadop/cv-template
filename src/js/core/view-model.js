@@ -1,7 +1,7 @@
 import { marked } from '../../vendor/marked/marked.esm.js';
 import { KNOWN_SECTIONS } from './schema.js';
 import { contactIcon, iconHref, networkIcon } from './icons.js';
-import { techEntry } from './tech.js';
+import { logoForTags, techEntry } from './tech.js';
 
 const inline = (md) => marked.parseInline(md ?? '');
 const block = (md) => marked.parse(md ?? '');
@@ -31,6 +31,10 @@ export function buildViewModel(cv, ui = {}) {
     bullets: e.bullets.map((md) => ({ html: inline(md) })),
     tags: e.tags.map((label) => ({ label })),
     tagText: e.tags.join(', '),
+    // Headline tiles for project cards: the Highlight: phrases, or the first two technologies.
+    tiles: (e.highlights.length ? e.highlights : e.tags.slice(0, 2)).map((text) => ({ text })),
+    logo: logoForTags(e.tags),
+    meta: [e.company, e.period].filter(Boolean).join(' · '),
   }));
   const items = (id) => (sectionOf(id)?.items ?? []).map((md) => ({ html: inline(md) }));
 

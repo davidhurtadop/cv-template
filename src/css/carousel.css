@@ -1,30 +1,61 @@
-/* Shared card carousel (used by every layout): a horizontally scrolling track with snap points,
-   plus previous/next buttons wired by js/features/carousel.js. Works with touch, trackpad and keyboard. */
+/* Shared project carousel (every layout): large rounded cards with a coloured headline panel,
+   in a horizontally scrolling track with snap points. Round arrows below come from
+   js/features/carousel.js; touch, trackpad and keyboard scrolling work too. */
 .cv-carousel { position: relative; }
 .cv-carousel-track {
-  display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scroll-padding-inline: .25rem;
-  padding: .25rem .25rem 1rem; margin: 0; list-style: none; scrollbar-width: thin;
+  display: flex; gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  scroll-padding-inline: .5rem; padding: .5rem .5rem 1.5rem; margin: 0 -.5rem; list-style: none;
+  scrollbar-width: none;
 }
-.cv-carousel-track:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: var(--radius); }
-.cv-carousel-item { flex: 0 0 min(86%, 24rem); scroll-snap-align: start; display: flex; }
+.cv-carousel-track::-webkit-scrollbar { display: none; }
+.cv-carousel-track:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 1.5rem; }
+.cv-carousel-item { flex: 0 0 min(88%, 26rem); scroll-snap-align: start; display: flex; }
+@media (min-width: 992px) { .cv-carousel-item { flex-basis: calc((100% - 1.5rem) / 2.15); } }
+
 .cv-card {
-  display: flex; flex-direction: column; gap: .5rem; width: 100%; padding: 1.25rem 1.25rem 1rem;
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  display: flex; flex-direction: column; width: 100%; overflow: hidden;
+  background: var(--surface); border-radius: 1.5rem;
+  box-shadow: 0 1px 2px rgb(0 0 0 / .06), 0 6px 20px rgb(0 0 0 / .08);
 }
-.cv-card-meta { display: flex; justify-content: space-between; gap: .5rem; font-size: .8rem; color: var(--text-muted); }
-.cv-card-company { text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
-.cv-card-period { white-space: nowrap; color: var(--accent); font-weight: 600; }
-.cv-card-title { font-size: 1.1rem; font-weight: 700; margin: 0; }
-.cv-card-text { margin: 0; color: var(--bs-body-color); }
-.cv-card-list { margin: 0; padding-left: 1.1rem; font-size: .92rem; }
-.cv-card-list li + li { margin-top: .25rem; }
-.cv-card-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin: auto 0 0; padding: .5rem 0 0; list-style: none; }
-.cv-card-tags li { font-size: .75rem; padding: .15rem .55rem; border-radius: 999px; border: 1px solid var(--border); color: var(--text-muted); }
-.cv-carousel-controls { display: flex; justify-content: flex-end; gap: .5rem; margin-bottom: .75rem; }
+:root[data-bs-theme="dark"] .cv-card { border: 1px solid var(--border); box-shadow: none; }
+
+/* Headline panel: three colour variants in turn, outlined frames behind two text tiles */
+.cv-card-media {
+  position: relative; display: flex; flex-direction: column; justify-content: center; gap: .9rem;
+  min-height: 13rem; margin: .5rem .5rem 0; padding: 2rem 4.25rem 2rem 1.75rem; border-radius: 1.1rem;
+  --panel: color-mix(in srgb, var(--accent) 22%, white); --tile-text: color-mix(in srgb, var(--accent) 80%, black);
+  --frame: color-mix(in srgb, var(--accent) 70%, black);
+  background: var(--panel); isolation: isolate;
+}
+.cv-carousel-item:nth-child(3n + 2) .cv-card-media { --panel: var(--accent); --frame: rgb(255 255 255 / .75); }
+.cv-carousel-item:nth-child(3n) .cv-card-media { --panel: color-mix(in srgb, var(--accent) 55%, #0b1020); --frame: rgb(255 255 255 / .55); }
+.cv-card-media::before, .cv-card-media::after {
+  content: ""; position: absolute; z-index: -1; border: 2px solid var(--frame); border-radius: .6rem; opacity: .7;
+}
+.cv-card-media::before { inset: 1.1rem 22% auto 18%; height: 38%; }
+.cv-card-media::after { inset: auto 30% 1.1rem 10%; height: 34%; }
+.cv-card-tile {
+  align-self: flex-start; max-width: 90%; padding: .3rem .8rem; background: #fff; color: var(--tile-text);
+  font-size: clamp(1.25rem, 2.4vw, 1.85rem); font-weight: 500; line-height: 1.15; letter-spacing: -.01em;
+}
+.cv-card-tile:nth-child(2) { align-self: center; margin-left: 12%; }
+.cv-card-logo {
+  position: absolute; top: .9rem; right: .9rem; width: 2.6rem; height: 2.6rem; padding: .45rem;
+  background: #fff; border-radius: .7rem; box-shadow: 0 2px 8px rgb(0 0 0 / .15);
+}
+.cv-card-logo svg { width: 100%; height: 100%; display: block; }
+
+.cv-card-body { display: flex; flex-direction: column; gap: .5rem; padding: 1.4rem 1.6rem 1.75rem; }
+.cv-card-eyebrow { font-size: .78rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .05em; }
+.cv-card-title { font-size: 1.2rem; font-weight: 700; margin: 0; }
+.cv-card-text { margin: 0; color: var(--bs-body-color); line-height: 1.55; }
+
+/* Round arrows under the track, as in the reference design */
+.cv-carousel-controls { display: flex; gap: .75rem; margin-top: .25rem; }
 .cv-carousel-btn {
-  width: 2.5rem; height: 2.5rem; border-radius: 50%; border: 1px solid var(--border); background: var(--surface);
-  color: inherit; display: inline-grid; place-items: center; padding: 0;
+  width: 3rem; height: 3rem; border-radius: 50%; border: 1.5px solid currentColor; background: transparent;
+  color: var(--bs-body-color); display: inline-grid; place-items: center; padding: 0; font-size: 1.15rem;
 }
-.cv-carousel-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
-.cv-carousel-btn:disabled { opacity: .35; cursor: default; }
+.cv-carousel-btn:hover:not(:disabled) { color: var(--accent); }
+.cv-carousel-btn:disabled { opacity: .3; cursor: default; }
 @media (prefers-reduced-motion: reduce) { .cv-carousel-track { scroll-behavior: auto; } }

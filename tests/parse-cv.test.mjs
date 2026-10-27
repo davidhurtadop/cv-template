@@ -94,6 +94,7 @@ test('entries keep a description line and a Tech: tag list', () => {
 *01/2024 – Present*
 Owns the API end to end.
 * Added monitoring.
+Highlight: Faster releases | Zero downtime
 Tech: Python, AWS, Terraform
 
 ## PROYECTOS {#extra}
@@ -104,4 +105,5 @@ Tech: Python, AWS, Terraform
   assert.equal(p.description, 'Owns the API end to end.');
   assert.deepEqual(p.bullets, ['Added monitoring.']);
   assert.deepEqual(p.tags, ['Python', 'AWS', 'Terraform']);
+  assert.deepEqual(p.highlights, ['Faster releases', 'Zero downtime']);
 });

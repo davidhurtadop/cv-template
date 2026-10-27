@@ -10,6 +10,8 @@ const ENTRY_HEAD = /^\*\*(.+?)\*\*\s+[—–-]\s+(.+)$/;
 const PERIOD = /^\*(?!\*)(.+?)\*$/;
 // "Tech: Python, AWS" (or Technologies/Tecnologías) under an entry becomes its tag list.
 const TECH_LINE = /^(?:tech|technologies|tecnolog[ií]as)\s*:\s*(.+)$/i;
+// "Highlight: Minimal disruption | AWS migration" gives a project its short headline phrases.
+const HIGHLIGHT_LINE = /^(?:highlights?|destacados?)\s*:\s*(.+)$/i;
 
 export function slug(label) {
   return label
@@ -100,14 +102,16 @@ function parseEntries(lines) {
     if (!line) continue;
     const head = line.match(ENTRY_HEAD);
     if (head) {
-      entry = { role: head[1].trim(), company: head[2].trim(), period: '', description: '', bullets: [], tags: [] };
+      entry = { role: head[1].trim(), company: head[2].trim(), period: '', description: '', bullets: [], tags: [], highlights: [] };
       entries.push(entry);
       continue;
     }
     if (!entry) continue;
     const bullet = line.match(BULLET);
     const tech = line.match(TECH_LINE);
+    const highlight = line.match(HIGHLIGHT_LINE);
     if (bullet) entry.bullets.push(bullet[1]);
+    else if (highlight) entry.highlights = highlight[1].split('|').map((t) => t.trim()).filter(Boolean);
     else if (tech) entry.tags = tech[1].split(',').map((t) => t.trim()).filter(Boolean);
     else if (!entry.period && PERIOD.test(line)) entry.period = line.match(PERIOD)[1].trim();
     else entry.description = entry.description ? `${entry.description} ${line}` : line;
