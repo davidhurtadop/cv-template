@@ -38,6 +38,8 @@ export function buildViewModel(cv, ui = {}) {
     tags: e.tags.map((label) => ({ label })),
     tagText: e.tags.join(', '),
     mainTags: e.tags.slice(0, 4).map((label) => ({ label })),
+    // Card text: the description followed by the first key result, for a bit more detail.
+    summaryHtml: inline([e.description, e.bullets[0]].filter(Boolean).join(' ')),
     // Company logo from front matter `logos:` (keyed by the company text); otherwise a monogram.
     logo: cv.meta.logos?.[e.company] ?? '',
     initials: cv.meta.logos?.[e.company] ? '' : initialsOf(e.company),

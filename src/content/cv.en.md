@@ -7,6 +7,8 @@ headline: [Senior Software Engineer, .NET (C#) Developer, Python Developer, AWS 
 tech: [python, flask, csharp, dotnet, aws, docker, azuredevops, oracle, mysql, sqlserver, git, terraform, postman, pytest, sonarqube, datadog]
 logos:
   "ENCORA / COFORGE": img/companies/coforge.svg
+  ENCORA: img/companies/coforge.svg
+  OPTIMA CONSULTING: img/companies/optima.png
   MVM: img/companies/mvm.svg
   AXEDE: img/companies/axede.svg
   ARQUITECSOFT: img/companies/arquitecsoft.png
