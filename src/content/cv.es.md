@@ -280,15 +280,15 @@ Tecnologías: C#, PL/SQL, OSF
 * **Ingeniería de Software** — Universidad del Cauca, Popayán (2005 – 2015)
 
 ## CERTIFICACIONES {#certifications}
-* AWS Certified Solutions Architect – Associate — AWS (2023)
-* Generative AI Expert Skills — Encora
-* Diplomado en Gerencia de Proyectos PMI — Universidad ICESI (2019)
 * REST APIs with Flask and Python — Udemy (2026)
 * Python PCEP: Certified Entry-Level Python Programmer — Udemy (2026)
 * AWS Lambda for the .NET Developer — Udemy (2026)
 * Claude Code 101 — Anthropic Academy (2026)
 * Claude 101 — Anthropic Academy (2026)
 * EF SET English Certificate — B2 Intermedio alto (2025)
+* AWS Certified Solutions Architect – Associate — AWS (2023)
+* Diplomado en Gerencia de Proyectos PMI — Universidad ICESI (2019)
+* Generative AI Expert Skills — Encora
 
 ## IDIOMAS {#languages}
 * **Español:** Nativo
