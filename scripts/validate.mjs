@@ -79,6 +79,7 @@ function checkFile(file, base) {
     if (!existsSync(join(base, path))) fail(where, `logo for "${company}" not found: ${path}`);
   }
   checkImage(where, base, 'hero_image', cv.meta.hero_image, (d) => d.width >= 1600 && Math.abs(d.width / d.height - 16 / 9) < 0.1);
+  checkImage(where, base, 'hero_image_light', cv.meta.hero_image_light, (d) => d.width >= 1600 && Math.abs(d.width / d.height - 16 / 9) < 0.1);
   checkImage(where, base, 'photo', cv.meta.photo, (d) => d.width === d.height && d.width >= 400);
   return { where, cv, ids };
 }
@@ -107,7 +108,7 @@ function checkSet(label, dir, languages, base) {
   return parsed;
 }
 
-const SHARED_META = ['career_start', 'tech', 'social', 'hide', 'hero_image', 'photo', 'logos'];
+const SHARED_META = ['career_start', 'tech', 'social', 'hide', 'hero_image', 'hero_image_light', 'photo', 'logos'];
 
 // Every key of the reference labels file (nested keys as a.b), so translations can't miss one.
 function flatKeys(obj, prefix = '') {

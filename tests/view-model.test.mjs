@@ -61,3 +61,37 @@ test('tagline is a fallback only when there is no headline', () => {
   const plain = buildViewModel(parseCv('# A\n**Role | Other**\n'), {});
   assert.equal(plain.taglineFallback, 'Role | Other');
 });
+
+test('education and certification lines split into title, organisation and period for timelines', () => {
+  const cv = parseCv(`# A
+
+## EDUCATION {#education}
+* **Software Engineering** — Universidad del Cauca, Popayán (2005 – 2015)
+
+## CERTIFICATIONS {#certifications}
+* AWS Certified Solutions Architect – Associate — AWS (2023)
+* Generative AI Expert Skills — Encora
+* Just a free-form line
+`);
+  const out = buildViewModel(cv, {});
+  assert.deepEqual(
+    [...out.education, ...out.certifications].map(({ titleHtml, orgHtml, period }) => [titleHtml, orgHtml, period]),
+    [
+      ['Software Engineering', 'Universidad del Cauca, Popayán', '2005 – 2015'],
+      ['AWS Certified Solutions Architect – Associate', 'AWS', '2023'],
+      ['Generative AI Expert Skills', 'Encora', ''],
+      ['Just a free-form line', '', ''],
+    ],
+  );
+  assert.equal(out.has.study, true);
+  assert.equal(out.has.timeline, true);
+  assert.deepEqual(out.timelineSections, []);
+});
+
+test('hero_image_light is only used together with hero_image', () => {
+  const both = buildViewModel(parseCv('---\nhero_image: img/a.jpg\nhero_image_light: img/b.jpg\n---\n# A\n'), {});
+  assert.equal(both.heroStyle, "background-image: url('img/a.jpg')");
+  assert.equal(both.heroLightStyle, "background-image: url('img/b.jpg')");
+  const lightOnly = buildViewModel(parseCv('---\nhero_image_light: img/b.jpg\n---\n# A\n'), {});
+  assert.equal(lightOnly.heroLightStyle, '');
+});
