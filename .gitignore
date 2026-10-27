@@ -12,3 +12,6 @@ npm-debug.log*
 .claude/settings.local.json
 CLAUDE.local.md
 
+
+# CVs tailored to job descriptions (cv-tailor skill): personal, kept off the public repo
+tailored/

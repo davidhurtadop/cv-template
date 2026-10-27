@@ -2,7 +2,7 @@
 
 Copy-paste prompts for common jobs. Run them in Claude Code at the root of this repo, or paste them into any chat together with the file [cv-schema.md](cv-schema.md), which defines the markdown format. Replace the `<...>` parts.
 
-In Claude Code, most of these exist as skills that follow the same steps: `cv-setup` (start here), `cv-update`, `cv-translate`, `cv-import`, `cv-validate`, `cv-pr`. Just describe what you want, or type the skill name.
+In Claude Code, most of these exist as skills that follow the same steps: `cv-setup` (start here), `cv-update`, `cv-translate`, `cv-import`, `cv-validate`, `cv-tailor`, `cv-pr`. Just describe what you want, or type the skill name.
 
 Always finish with `npm test && npm run validate`. Claude should run them and fix what they report.
 
@@ -45,3 +45,7 @@ In Claude Code you can also ask for the `cv-reviewer` subagent.
 ## 9. Open a pull request for review
 
 > Run the checks (`npm test && npm run validate`). Then upload my current branch and open a pull request into `main` with a short title and a description of what changed and that the checks passed. Do not merge it. Tell me that when a reviewer approves and it is merged, the GitHub Pages workflow updates the site by itself, and remind me of the one-time setting: repository Settings → Pages → Source = GitHub Actions.
+
+## 10. Tailor the CV to a job description
+
+> Read `docs/cv-schema.md` and my CV in `src/content/cv.<en|es>.md`. Here is a job description: <paste it>. List the must-have and nice-to-have requirements, and for each one show where my CV covers it. For anything not covered, ask me one question at a time whether I have that experience; never add or exaggerate anything I haven't confirmed. Then write a tailored CV in the same format to `tailored/cv.<company>-<role>.<lang>.md` (relevant skills and bullets first, every job, title and date unchanged) and do not edit anything in `src/`.

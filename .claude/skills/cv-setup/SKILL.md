@@ -45,6 +45,7 @@ Ask what changed and route:
 | Add or edit a job, certification, skill, summary, social link, hide a field | `cv-update` |
 | Add a language or re-sync a translation | `cv-translate` |
 | Replace the CV from a PDF, Word, LinkedIn or text version | `cv-import` |
+| Adapt my CV to a job description (separate file, website untouched) | `cv-tailor` |
 | Check everything | `cv-validate` |
 | Send changes for review / get them online | `cv-pr` |
 
