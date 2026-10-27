@@ -8,6 +8,7 @@ import { initTyped } from './features/typed.js';
 import { initScrollSpy } from './features/scrollspy.js';
 import { addAlternateLinks, languageMenu, pickLanguage } from './features/language.js';
 import { initPrint } from './features/print.js';
+import { initCarousels } from './features/carousel.js';
 
 const params = new URLSearchParams(location.search);
 
@@ -51,6 +52,7 @@ async function main() {
   initTheme(config.defaultTheme);
   initTyped(app);
   initScrollSpy('[data-spy-nav]');
+  initCarousels(app);
   initPrint({ html: printHtml, vm, render, lang, layoutHref: 'layouts/print/print.css' });
 
   if (params.has('debug')) {

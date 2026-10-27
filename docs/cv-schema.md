@@ -20,9 +20,10 @@ Each language has one file: `src/content/cv.<lang>.md`. All languages must use t
 ## Body
 
 - `# NAME` then a bold line with roles.
-- Each section is `## TITLE {#id}`. Known ids: `contact`, `summary`, `skills`, `experience`, `education`, `certifications`, `languages`. Any other id becomes a generic text section.
+- Each section is `## TITLE {#id}`. Known ids: `contact`, `summary`, `skills`, `experience`, `projects` (optional), `education`, `certifications`, `languages`. Any other id becomes a generic text section.
 - `contact`, `skills`, `languages`: bullets of the form `* **Label:** value`. Every contact line is optional; for a public repo it is safest to leave out a phone number or address entirely instead of using `hide`.
 - `experience`: for each job, a bold line `**Role** — Company`, an italic period line `*MM/YYYY – Present*`, then bullets.
+- `projects`: same shape as `experience` (`**Project** — Company`, period), plus an optional one-line description and an optional `Tech: a, b, c` line (`Tecnologías:` also works). On the website projects show as a card carousel; the PDF lists name, dates, description and technologies.
 - `education`, `certifications`: plain bullets.
 
 ## Tokens

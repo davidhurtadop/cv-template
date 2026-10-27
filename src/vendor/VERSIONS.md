@@ -5,7 +5,7 @@ Committed as-is so the site needs no install or build step. To update one, downl
 | Library | Version | Files | License |
 |---|---|---|---|
 | Bootstrap | 5.3.8 | `bootstrap/bootstrap.min.css`, `bootstrap/bootstrap.bundle.min.js` | MIT |
-| Bootstrap Icons | 1.13.2 | `bootstrap-icons/icons.svg`: a **hand-picked sprite** (not the full 1 MB file) | MIT |
+| Bootstrap Icons | 1.13.2 | `bootstrap-icons/icons.svg`: a **hand-picked sprite** (not the full 1 MB file), including `chevron-left`/`chevron-right` for the carousel | MIT |
 | marked | 18.1.1 | `marked/marked.esm.js` | MIT |
 | Devicon | 2.17.0 | `devicon/tech.svg`: hand-picked coloured logo sprite (`original` variants; AWS uses the wordmark one) | MIT (logos remain trademarks of their owners) |
 | js-yaml | 5.5.0 | `js-yaml/js-yaml.mjs` | MIT |

@@ -28,5 +28,8 @@
   .pr-entry { margin-bottom: 7pt; break-inside: avoid; }
   .pr-entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8pt; break-after: avoid; }
   .pr-entry h3 { font-size: 10.5pt; font-weight: 700; margin: 0; }
+  .pr-project { margin-bottom: 5pt; break-inside: avoid; }
+  .pr-project p { margin: 0; }
+  .pr-tags { font-size: 8.5pt; color: #555; }
   .pr-period { font-size: 9pt; color: #555; white-space: nowrap; }
 }

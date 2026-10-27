@@ -1,8 +1,11 @@
 // Section ids the engine understands, in the order layouts normally show them.
 // Any other id is rendered as a generic text section.
 export const KNOWN_SECTIONS = [
-  'contact', 'summary', 'skills', 'experience', 'education', 'certifications', 'languages',
+  'contact', 'summary', 'skills', 'experience', 'projects', 'education', 'certifications', 'languages',
 ];
+
+// Known sections a CV may leave out without a warning.
+export const OPTIONAL_SECTIONS = ['projects'];
 
 // How the body of each known section is parsed.
 export const SECTION_KINDS = {
@@ -11,6 +14,7 @@ export const SECTION_KINDS = {
   languages: 'pairs',
   summary: 'text',
   experience: 'entries',
+  projects: 'entries',
   education: 'list',
   certifications: 'list',
 };

@@ -4,7 +4,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { dirname, extname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseCv } from '../src/js/core/parse-cv.js';
-import { KNOWN_SECTIONS, REQUIRED_META } from '../src/js/core/schema.js';
+import { KNOWN_SECTIONS, OPTIONAL_SECTIONS, REQUIRED_META } from '../src/js/core/schema.js';
 import { SOCIAL_NETWORKS } from '../src/js/core/icons.js';
 import { TECH } from '../src/js/core/tech.js';
 import { KNOWN_TOKENS, TOKEN, yearsSince } from '../src/js/core/placeholders.js';
@@ -62,7 +62,7 @@ function checkFile(file, base) {
   const ids = cv.sections.map((s) => s.id);
   const dup = ids.find((id, i) => ids.indexOf(id) !== i);
   if (dup) fail(where, `duplicate section id "${dup}"`);
-  for (const id of KNOWN_SECTIONS) if (!ids.includes(id)) warn(where, `no "${id}" section`);
+  for (const id of KNOWN_SECTIONS) if (!ids.includes(id) && !OPTIONAL_SECTIONS.includes(id)) warn(where, `no "${id}" section`);
 
   const contactKeys = (cv.sections.find((s) => s.id === 'contact')?.pairs ?? []).map((p) => p.key);
   for (const key of cv.meta.hide ?? []) {

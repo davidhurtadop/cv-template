@@ -35,7 +35,7 @@ test('parses experience entries with period and bullets', () => {
 });
 
 test('unknown section ids fall back to markdown text', () => {
-  const cv = parseCv('---\nlang: en\n---\n# A\n\n## Projects {#projects}\nHello **world**\n');
+  const cv = parseCv('---\nlang: en\n---\n# A\n\n## Publications {#publications}\nHello **world**\n');
   assert.equal(cv.sections[0].kind, 'markdown');
   assert.equal(cv.sections[0].text, 'Hello **world**');
 });
@@ -83,4 +83,25 @@ test('{{years}} is filled from career_start and parseCv applies it', () => {
   assert.equal(cv.meta.description, '14+ years');
   assert.equal(cv.sections[0].text, 'Over 14 years and {{other}}.');
   assert.equal(fillPlaceholders('{{years}}', {}), '{{years}}');
+});
+
+test('entries keep a description line and a Tech: tag list', () => {
+  const cv = parseCv(`# A
+
+## PROJECTS {#projects}
+
+**Customer API** — Example Corp
+*01/2024 – Present*
+Owns the API end to end.
+* Added monitoring.
+Tech: Python, AWS, Terraform
+
+## PROYECTOS {#extra}
+`);
+  const [p] = cv.sections.find((s) => s.id === 'projects').entries;
+  assert.equal(p.role, 'Customer API');
+  assert.equal(p.period, '01/2024 – Present');
+  assert.equal(p.description, 'Owns the API end to end.');
+  assert.deepEqual(p.bullets, ['Added monitoring.']);
+  assert.deepEqual(p.tags, ['Python', 'AWS', 'Terraform']);
 });

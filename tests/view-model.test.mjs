@@ -25,7 +25,7 @@ social:
 ## SUMMARY {#summary}
 Hello.
 
-## PROJECTS {#projects}
+## PUBLICATIONS {#publications}
 Some *project*.
 `;
 
@@ -45,13 +45,13 @@ test('socialExtra skips links already shown in the contact list', () => {
 });
 
 test('nav labels come from ui.nav and fall back to the section title; mainSections drops contact', () => {
-  assert.deepEqual(vm.sections.map((s) => s.title), ['Contact', 'Summary', 'PROJECTS']);
-  assert.deepEqual(vm.mainSections.map((s) => s.id), ['summary', 'projects']);
+  assert.deepEqual(vm.sections.map((s) => s.title), ['Contact', 'Summary', 'PUBLICATIONS']);
+  assert.deepEqual(vm.mainSections.map((s) => s.id), ['summary', 'publications']);
 });
 
 test('unknown sections become extra blocks; unknown tech has no logo', () => {
   assert.equal(vm.extra.length, 1);
-  assert.equal(vm.extra[0].id, 'projects');
+  assert.equal(vm.extra[0].id, 'publications');
   assert.match(vm.extra[0].html, /<em>project<\/em>/);
   assert.deepEqual(vm.tech.map((t) => [t.label, Boolean(t.icon)]), [['Python', true], ['Cobol', false]]);
 });

@@ -1,10 +1,10 @@
-import { KNOWN_SECTIONS } from '../core/schema.js';
+import { KNOWN_SECTIONS, OPTIONAL_SECTIONS } from '../core/schema.js';
 
 /** Overlay for ?debug=1: shows what the CV is missing or contains that layouts do not know. */
 export function showDebug({ cv, config, report }) {
   const ids = cv.sections.map((s) => s.id);
   const rows = {
-    'Missing known sections': KNOWN_SECTIONS.filter((id) => !ids.includes(id)),
+    'Missing known sections': KNOWN_SECTIONS.filter((id) => !ids.includes(id) && !OPTIONAL_SECTIONS.includes(id)),
     'Extra sections (generic block)': ids.filter((id) => !KNOWN_SECTIONS.includes(id)),
     'Hidden contact keys': cv.meta.hide ?? [],
     'Unresolved placeholders': [...new Set(report.unresolved)],

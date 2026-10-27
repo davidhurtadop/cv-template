@@ -11,8 +11,11 @@
     "summary": "Summary",
     "skills": "Skills",
     "experience": "Experience",
+    "projects": "Projects",
     "education": "Education",
     "certifications": "Certifications",
     "languages": "Languages"
-  }
+  },
+  "previousProject": "Previous project",
+  "nextProject": "Next project"
 }

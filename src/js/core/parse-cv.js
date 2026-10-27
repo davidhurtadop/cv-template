@@ -8,6 +8,8 @@ const BULLET = /^[*-]\s+(.*)$/;
 const PAIR = /^\*\*(.+?)\*\*\s*(.*)$/;
 const ENTRY_HEAD = /^\*\*(.+?)\*\*\s+[—–-]\s+(.+)$/;
 const PERIOD = /^\*(?!\*)(.+?)\*$/;
+// "Tech: Python, AWS" (or Technologies/Tecnologías) under an entry becomes its tag list.
+const TECH_LINE = /^(?:tech|technologies|tecnolog[ií]as)\s*:\s*(.+)$/i;
 
 export function slug(label) {
   return label
@@ -98,14 +100,17 @@ function parseEntries(lines) {
     if (!line) continue;
     const head = line.match(ENTRY_HEAD);
     if (head) {
-      entry = { role: head[1].trim(), company: head[2].trim(), period: '', bullets: [] };
+      entry = { role: head[1].trim(), company: head[2].trim(), period: '', description: '', bullets: [], tags: [] };
       entries.push(entry);
       continue;
     }
     if (!entry) continue;
     const bullet = line.match(BULLET);
+    const tech = line.match(TECH_LINE);
     if (bullet) entry.bullets.push(bullet[1]);
+    else if (tech) entry.tags = tech[1].split(',').map((t) => t.trim()).filter(Boolean);
     else if (!entry.period && PERIOD.test(line)) entry.period = line.match(PERIOD)[1].trim();
+    else entry.description = entry.description ? `${entry.description} ${line}` : line;
   }
   return entries;
 }

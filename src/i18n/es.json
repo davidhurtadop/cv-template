@@ -11,8 +11,11 @@
     "summary": "Resumen",
     "skills": "Competencias",
     "experience": "Experiencia",
+    "projects": "Proyectos",
     "education": "Educación",
     "certifications": "Certificaciones",
     "languages": "Idiomas"
-  }
+  },
+  "previousProject": "Proyecto anterior",
+  "nextProject": "Proyecto siguiente"
 }

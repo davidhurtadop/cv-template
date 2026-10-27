@@ -25,6 +25,13 @@ export function buildViewModel(cv, ui = {}) {
     plain: contactHref(p.key, p.value) ? '' : inline(p.value),
     icon: contactIcon(p.key) ? iconHref(contactIcon(p.key)) : '',
   }));
+  const entries = (id) => (sectionOf(id)?.entries ?? []).map((e) => ({
+    ...e,
+    descriptionHtml: inline(e.description),
+    bullets: e.bullets.map((md) => ({ html: inline(md) })),
+    tags: e.tags.map((label) => ({ label })),
+    tagText: e.tags.join(', '),
+  }));
   const items = (id) => (sectionOf(id)?.items ?? []).map((md) => ({ html: inline(md) }));
 
   const vm = {
@@ -60,10 +67,8 @@ export function buildViewModel(cv, ui = {}) {
     summary: sectionOf('summary') ? block(sectionOf('summary').text) : '',
     skills: pairs('skills'),
     languages: pairs('languages'),
-    experience: (sectionOf('experience')?.entries ?? []).map((e) => ({
-      ...e,
-      bullets: e.bullets.map((md) => ({ html: inline(md) })),
-    })),
+    experience: entries('experience'),
+    projects: entries('projects'),
     education: items('education'),
     certifications: items('certifications'),
     extra: cv.sections

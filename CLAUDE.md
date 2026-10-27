@@ -37,6 +37,7 @@ Path-scoped rules load automatically when you touch matching files: `.claude/rul
 - Contact labels become language-independent keys through `KEY_ALIASES` in `schema.js`, or an explicit `**Label {#phone}:**`, so `hide: [phone]` works in every language.
 - `src/index.html` holds static copies of the default-language title, description and `og:` tags (for link previews without JavaScript) and `<meta name="theme-default">` for the pre-paint theme script; `validate.mjs` warns or fails when they drift from the content and `site.json`.
 - PDF: `print.js` renders `layouts/print/layout.html` into a hidden `#print-root`; `layouts/print/print.css` (media=print) hides everything else, so the button and Ctrl/Cmd+P print the same A4 document.
+- Projects render through the shared carousel (`css/carousel.css`, `features/carousel.js`, markup with `data-carousel`, `data-carousel-track`, `data-carousel-prev/next`) in every layout.
 - Icons: social and UI icons come from the hand-picked sprite `vendor/bootstrap-icons/icons.svg` (names in `core/icons.js`); technology logos from `vendor/devicon/tech.svg` (names in `core/tech.js`).
 
 ## `.claude/` and the CV skills
