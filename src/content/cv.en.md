@@ -286,9 +286,9 @@ Tech: C#, PL/SQL, OSF
 * Claude Code 101 — Anthropic Academy (2026)
 * Claude 101 — Anthropic Academy (2026)
 * EF SET English Certificate — B2 Upper Intermediate (2025)
+* Generative AI Expert Skills — Encora (2025)
 * AWS Certified Solutions Architect – Associate — AWS (2023)
 * Diplomado en Gerencia de Proyectos PMI — Universidad ICESI (2019)
-* Generative AI Expert Skills — Encora
 
 ## LANGUAGES {#languages}
 * **Spanish:** Native
