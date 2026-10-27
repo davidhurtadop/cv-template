@@ -26,7 +26,7 @@
       </div>
       <div class="collapse navbar-collapse" id="hz-menu" data-spy-nav>
         <ul class="navbar-nav ms-auto me-lg-3">
-          <template data-repeat="sections">
+          <template data-repeat="timelineSections">
             <li class="nav-item"><a class="nav-link" data-cv="title" data-cv-attr="href:href"></a></li>
           </template>
         </ul>
@@ -129,20 +129,63 @@
     </div>
   </section>
 
-  <section id="experience" class="hz-section hz-alt" data-if="experience">
-    <div class="container hz-narrow">
-      <h2 class="hz-title" data-cv="t.experience"></h2>
-      <ol class="hz-timeline list-unstyled">
-        <template data-repeat="experience">
-          <li class="hz-timeline-item">
-            <h3 class="hz-role"><span data-cv="role"></span> <span class="hz-company">· <span data-cv="company"></span></span></h3>
-            <p class="hz-period" data-cv="period"></p>
-            <ul class="hz-bullets">
-              <template data-repeat="bullets"><li data-cv-html="html"></li></template>
-            </ul>
-          </li>
-        </template>
-      </ol>
+  <!-- Experience: work on the left, education and certifications on the right. -->
+  <section id="experience" class="hz-section hz-alt" data-if="has.timeline">
+    <div class="container">
+      <h2 class="hz-title" data-if="has.experience" data-cv="t.experience"></h2>
+      <div class="row g-5">
+        <div class="col-lg" data-if="experience">
+          <div class="hz-col-head">
+            <svg class="icon" aria-hidden="true"><use href="vendor/bootstrap-icons/icons.svg#bi-briefcase"></use></svg>
+            <h3 data-cv="ui.work"></h3>
+          </div>
+          <ol class="hz-timeline list-unstyled">
+            <template data-repeat="experience">
+              <li class="hz-timeline-item">
+                <p class="hz-period" data-cv="period"></p>
+                <h4 class="hz-role" data-cv="role"></h4>
+                <p class="hz-company" data-cv="company"></p>
+                <ul class="hz-bullets">
+                  <template data-repeat="bullets"><li data-cv-html="html"></li></template>
+                </ul>
+              </li>
+            </template>
+          </ol>
+        </div>
+
+        <div class="col-lg" data-if="has.study">
+          <div id="education" class="hz-col-block" data-if="education">
+            <div class="hz-col-head">
+              <svg class="icon" aria-hidden="true"><use href="vendor/bootstrap-icons/icons.svg#bi-mortarboard"></use></svg>
+              <h3 data-cv="ui.nav.education"></h3>
+            </div>
+            <ol class="hz-timeline list-unstyled">
+              <template data-repeat="education">
+                <li class="hz-timeline-item">
+                  <p class="hz-period" data-if="period" data-cv="period"></p>
+                  <h4 class="hz-role" data-cv-html="titleHtml"></h4>
+                  <p class="hz-company" data-if="orgHtml" data-cv-html="orgHtml"></p>
+                </li>
+              </template>
+            </ol>
+          </div>
+          <div id="certifications" class="hz-col-block" data-if="certifications">
+            <div class="hz-col-head">
+              <svg class="icon" aria-hidden="true"><use href="vendor/bootstrap-icons/icons.svg#bi-award"></use></svg>
+              <h3 data-cv="ui.nav.certifications"></h3>
+            </div>
+            <ol class="hz-timeline list-unstyled">
+              <template data-repeat="certifications">
+                <li class="hz-timeline-item">
+                  <p class="hz-period" data-if="period" data-cv="period"></p>
+                  <h4 class="hz-role" data-cv-html="titleHtml"></h4>
+                  <p class="hz-company" data-if="orgHtml" data-cv-html="orgHtml"></p>
+                </li>
+              </template>
+            </ol>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -182,26 +225,6 @@
           </template>
         </ul>
       </div>
-    </div>
-  </section>
-
-  <section id="education" class="hz-section hz-alt" data-if="education">
-    <div class="container hz-narrow">
-      <h2 class="hz-title" data-cv="t.education"></h2>
-      <ul class="hz-list list-unstyled">
-        <template data-repeat="education"><li class="hz-card" data-cv-html="html"></li></template>
-      </ul>
-    </div>
-  </section>
-
-  <section id="certifications" class="hz-section" data-if="certifications">
-    <div class="container">
-      <h2 class="hz-title" data-cv="t.certifications"></h2>
-      <ul class="row g-3 list-unstyled">
-        <template data-repeat="certifications">
-          <li class="col-md-6"><div class="hz-card h-100" data-cv-html="html"></div></li>
-        </template>
-      </ul>
     </div>
   </section>
 

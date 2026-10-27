@@ -12,6 +12,14 @@ const initialsOf = (company = '') => {
 const inline = (md) => marked.parseInline(md ?? '');
 const block = (md) => marked.parse(md ?? '');
 
+// "**Degree** — School, City (2005 – 2015)" -> title, organisation and period for timeline layouts.
+// Lines that do not follow the "title — organisation (period)" shape keep everything in the title.
+function timelineParts(md) {
+  const m = md.match(/^(.+?)\s+—\s+(.+?)(?:\s+\(([^()]+)\))?$/);
+  if (!m) return { titleHtml: inline(md), orgHtml: '', period: '' };
+  return { titleHtml: inline(m[1].replace(/^\*\*(.+)\*\*$/, '$1')), orgHtml: inline(m[2]), period: m[3] ?? '' };
+}
+
 function contactHref(key, value) {
   if (key === 'email') return `mailto:${value}`;
   if (key === 'phone') return `tel:${value.replace(/[^\d+]/g, '')}`;
@@ -44,7 +52,7 @@ export function buildViewModel(cv, ui = {}) {
     logo: cv.meta.logos?.[e.company] ?? '',
     initials: cv.meta.logos?.[e.company] ? '' : initialsOf(e.company),
   }));
-  const items = (id) => (sectionOf(id)?.items ?? []).map((md) => ({ html: inline(md) }));
+  const items = (id) => (sectionOf(id)?.items ?? []).map((md) => ({ html: inline(md), ...timelineParts(md) }));
 
   const vm = {
     ui,
@@ -92,7 +100,12 @@ export function buildViewModel(cv, ui = {}) {
     // Layouts that show contact details next to the name leave them out of their section nav.
     mainSections: cv.sections.filter((s) => s.id !== 'contact')
       .map((s) => ({ id: s.id, title: ui.nav?.[s.id] ?? s.title, href: `#${s.id}` })),
+    // Layouts that show education and certifications as columns of the experience section leave them out of their nav.
+    timelineSections: cv.sections.filter((s) => !['education', 'certifications'].includes(s.id))
+      .map((s) => ({ id: s.id, title: ui.nav?.[s.id] ?? s.title, href: `#${s.id}` })),
     has: Object.fromEntries(cv.sections.map((s) => [s.id, true])),
   };
+  vm.has.timeline = Boolean(vm.has.experience || vm.has.education || vm.has.certifications);
+  vm.has.study = Boolean(vm.has.education || vm.has.certifications);
   return vm;
 }

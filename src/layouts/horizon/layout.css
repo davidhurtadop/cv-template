@@ -24,7 +24,6 @@
 .hz-name { font-family: var(--font-heading); font-weight: 800; font-size: clamp(2.2rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -.02em; max-width: 18ch; }
 .hz-headline { font-size: clamp(1.15rem, 2.5vw, 1.6rem); color: var(--accent); font-weight: 600; min-height: 1.6em; margin: 1rem 0 2rem; }
 .hz-photo + .hz-name { margin-top: 0; }
-.hz-hero[data-has-image] .hz-headline { color: #fff; }
 .hz-headline .is-typing::after { content: "|"; margin-left: 2px; animation: hz-blink 1s steps(1) infinite; }
 .hz-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; }
 .hz-social-link { font-size: 1.6rem; color: inherit; transition: color .15s; }
@@ -37,7 +36,6 @@
 
 /* Technology marquee */
 .hz-tech { position: relative; margin-top: 3.5rem; }
-.hz-hero[data-has-image] .hz-tech-title { color: rgb(255 255 255 / .85); }  /* the accent colour is hard to read on photos */
 .hz-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
 .hz-marquee-track { display: flex; width: max-content; animation: hz-scroll var(--marquee-duration, 40s) linear infinite; }
 .hz-marquee:hover .hz-marquee-track { animation-play-state: paused; }
@@ -67,16 +65,21 @@ html { scroll-behavior: smooth; }
 .hz-card-title, .hz-tech-title { font-size: .85rem; font-weight: 500; line-height: 1.2; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-bottom: .5rem; }
 .hz-label { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); }
 .hz-contact-icon { font-size: 1.4rem; color: var(--accent); flex: none; }
-.hz-list li + li { margin-top: .75rem; }
 
-/* Experience timeline */
-.hz-timeline { border-left: 2px solid var(--border); margin-left: .5rem; padding-left: 1.75rem; }
-.hz-timeline-item { position: relative; padding-bottom: 2.25rem; }
+/* Experience: one timeline column per kind (work, education, certifications) */
+.hz-col-block + .hz-col-block { margin-top: 3rem; }
+.hz-col-block { scroll-margin-top: 5rem; }
+.hz-col-head { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.75rem; }
+.hz-col-head .icon { width: 3rem; height: 3rem; padding: .8rem; border-radius: .75rem; flex: none; background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); }
+.hz-col-head h3 { font-size: 1.35rem; font-weight: 600; margin: 0; }
+.hz-timeline { position: relative; padding-left: 1.75rem; margin: 0; }
+.hz-timeline::before { content: ""; position: absolute; left: 5px; top: .4rem; bottom: .4rem; width: 2px; background: var(--border); }
+.hz-timeline-item { position: relative; padding-bottom: 2rem; }
 .hz-timeline-item:last-child { padding-bottom: 0; }
-.hz-timeline-item::before { content: ""; position: absolute; left: calc(-1.75rem - 7px); top: .45rem; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--surface-alt); }
-.hz-role { font-size: 1.15rem; font-weight: 700; margin-bottom: .1rem; }
-.hz-company { font-weight: 500; color: var(--text-muted); }
-.hz-period { font-size: .9rem; color: var(--accent); font-weight: 600; margin-bottom: .75rem; }
+.hz-timeline-item::before { content: ""; position: absolute; left: -1.75rem; top: .3rem; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent); }
+.hz-period { display: inline-block; font-size: .82rem; color: var(--accent); font-weight: 600; margin-bottom: .35rem; }
+.hz-role { font-size: 1.1rem; font-weight: 600; margin-bottom: .2rem; }
+.hz-company { font-size: .9rem; color: var(--text-muted); margin-bottom: .6rem; }
 .hz-bullets { padding-left: 1.1rem; margin: 0; }
 .hz-bullets li + li { margin-top: .35rem; }
 
