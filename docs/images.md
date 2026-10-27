@@ -4,10 +4,11 @@ Both images are optional. Put the files in `src/img/` and reference them from th
 
 ```yaml
 hero_image: img/hero.jpg
+hero_image_light: img/hero-light.jpg   # optional, used in the light theme
 photo: img/profile.jpg
 ```
 
-If `hero_image` is missing, the hero uses a gradient that follows the light/dark theme. If `photo` is missing, nothing is shown in its place.
+If `hero_image` is missing, the hero uses a gradient that follows the light/dark theme. `hero_image_light` is an optional light version (same size rules) shown in the light theme with dark text and no dark overlay; without it the light theme uses `hero_image` too. If `photo` is missing, nothing is shown in its place.
 
 ## Hero image (wide banner)
 

@@ -36,7 +36,8 @@
 </header>
 
 <main id="main">
-  <section id="top" class="hz-hero" data-cv-attr="style:heroStyle;data-has-image:heroFlag">
+  <section id="top" class="hz-hero" data-cv-attr="style:heroStyle;data-has-image:heroFlag;data-has-light-image:heroLightFlag">
+    <div class="hz-hero-light" data-if="heroLightStyle" data-cv-attr="style:heroLightStyle" aria-hidden="true"></div>
     <div class="container hz-hero-inner">
       <img class="hz-photo" data-if="photo" data-cv-attr="src:photo;alt:name" width="160" height="160">
       <h1 class="hz-name" data-cv="name"></h1>
@@ -134,7 +135,7 @@
     <div class="container">
       <h2 class="hz-title" data-if="has.experience" data-cv="t.experience"></h2>
       <div class="row g-5">
-        <div class="col-lg" data-if="experience">
+        <div class="col-lg hz-col-work" data-if="experience">
           <div class="hz-col-head">
             <svg class="icon" aria-hidden="true"><use href="vendor/bootstrap-icons/icons.svg#bi-briefcase"></use></svg>
             <h3 data-cv="ui.work"></h3>
@@ -153,7 +154,7 @@
           </ol>
         </div>
 
-        <div class="col-lg" data-if="has.study">
+        <div class="col-lg hz-col-study" data-if="has.study">
           <div id="education" class="hz-col-block" data-if="education">
             <div class="hz-col-head">
               <svg class="icon" aria-hidden="true"><use href="vendor/bootstrap-icons/icons.svg#bi-mortarboard"></use></svg>

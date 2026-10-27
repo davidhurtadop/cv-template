@@ -87,3 +87,11 @@ test('education and certification lines split into title, organisation and perio
   assert.equal(out.has.timeline, true);
   assert.deepEqual(out.timelineSections, []);
 });
+
+test('hero_image_light is only used together with hero_image', () => {
+  const both = buildViewModel(parseCv('---\nhero_image: img/a.jpg\nhero_image_light: img/b.jpg\n---\n# A\n'), {});
+  assert.equal(both.heroStyle, "background-image: url('img/a.jpg')");
+  assert.equal(both.heroLightStyle, "background-image: url('img/b.jpg')");
+  const lightOnly = buildViewModel(parseCv('---\nhero_image_light: img/b.jpg\n---\n# A\n'), {});
+  assert.equal(lightOnly.heroLightStyle, '');
+});

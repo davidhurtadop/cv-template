@@ -20,6 +20,12 @@
 .hz-hero-inner { position: relative; width: 100%; }
 .hz-hero[data-has-image] { color: #fff; }
 .hz-hero[data-has-image] .hz-social-link { color: #fff; }
+/* hero_image_light: a layer over the dark image in the light theme, with normal text colours and no dark overlay. */
+.hz-hero-light { display: none; position: absolute; inset: 0; background: center / cover no-repeat; }
+:root[data-bs-theme="light"] .hz-hero-light { display: block; }
+:root[data-bs-theme="light"] .hz-hero[data-has-light-image] { color: var(--bs-body-color); }
+:root[data-bs-theme="light"] .hz-hero[data-has-light-image] .hz-social-link { color: inherit; }
+:root[data-bs-theme="light"] .hz-hero[data-has-light-image]::before { content: none; }
 .hz-photo { width: 9rem; height: 9rem; object-fit: cover; border-radius: 50%; border: 3px solid var(--accent); margin-bottom: 1.5rem; }
 .hz-name { font-family: var(--font-heading); font-weight: 800; font-size: clamp(2.2rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -.02em; max-width: 18ch; }
 .hz-headline { font-size: clamp(1.15rem, 2.5vw, 1.6rem); color: var(--accent); font-weight: 600; min-height: 1.6em; margin: 1rem 0 2rem; }
@@ -67,6 +73,7 @@ html { scroll-behavior: smooth; }
 .hz-contact-icon { font-size: 1.4rem; color: var(--accent); flex: none; }
 
 /* Experience: one timeline column per kind (work, education, certifications) */
+@media (min-width: 992px) { .hz-col-work { flex-grow: 3; } .hz-col-study { flex-grow: 2; } }  /* 60/40 when both are shown */
 .hz-col-block + .hz-col-block { margin-top: 3rem; }
 .hz-col-block { scroll-margin-top: 5rem; }
 .hz-col-head { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.75rem; }

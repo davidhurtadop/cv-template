@@ -72,6 +72,9 @@ export function buildViewModel(cv, ui = {}) {
     heroImage: cv.meta.hero_image ?? '',
     heroStyle: cv.meta.hero_image ? `background-image: url('${cv.meta.hero_image}')` : '',
     heroFlag: cv.meta.hero_image ? 'true' : '',
+    // Optional light version, shown by layouts in the light theme only.
+    heroLightStyle: cv.meta.hero_image && cv.meta.hero_image_light ? `background-image: url('${cv.meta.hero_image_light}')` : '',
+    heroLightFlag: cv.meta.hero_image && cv.meta.hero_image_light ? 'true' : '',
     photo: cv.meta.photo ?? '',
     social: (cv.meta.social ?? []).map((s) => ({
       network: s.network,

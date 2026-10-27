@@ -14,6 +14,7 @@ logos:
   ARQUITECSOFT: img/companies/arquitecsoft.png
   OPEN SYSTEMS INTERNATIONAL: img/companies/openintl.png
 hero_image: img/hero.jpg
+hero_image_light: img/hero-light.jpg
 social:
   - { network: linkedin, url: "https://www.linkedin.com/in/dahurtadop/" }
   - { network: github, url: "https://github.com/davidhurtadop" }

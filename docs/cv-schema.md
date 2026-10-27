@@ -12,6 +12,7 @@ Each language has one file: `src/content/cv.<lang>.md`. All languages must use t
 | `career_start` | no | `YYYY` or `YYYY-MM` when your career began. Enables the `{{years}}` token (see below) |
 | `headline` | no | List of titles typed in the hero banner |
 | `hero_image` | no | Wide banner, path relative to `src/` (see `docs/images.md`) |
+| `hero_image_light` | no | Light version of `hero_image` used in the light theme (needs `hero_image`) |
 | `photo` | no | Square profile photo, path relative to `src/` |
 | `tech` | no | List of technology slugs shown as a scrolling logo strip in the hero (`python`, `aws`, `dotnet`, ...; full list in `src/js/core/tech.js`). Unknown slugs show as text only |
 | `hide` | no | Contact keys (lowercase label, e.g. `phone`) hidden on web and PDF |
@@ -45,6 +46,7 @@ title: "Your Name"
 description: "One sentence used by search engines and link previews."
 headline: [Your Role, Another Role]       # typed in the hero banner
 # hero_image: img/hero.jpg                # optional, see docs/images.md
+# hero_image_light: img/hero-light.jpg    # optional light-theme version
 # photo: img/profile.jpg                  # optional
 tech: [python, aws, git]                  # logo strip in the hero
 hide: []                                  # e.g. [phone] to hide it on the page
